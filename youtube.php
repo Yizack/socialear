@@ -51,7 +51,7 @@
       $url = $_GET["URL"];
       $title = "TODO";
       $thumbnail = "TODO";
-      $video_array = getVideoInfo($tweet);
+      $video_array = getVideoInfo($url);
       echo '              <a href="'.$url.'" target="_blank">'."\n";
       echo '                <img class="img-fluid d-inline" src="'.$thumbnail.'" alt="'.$title.'" title="'.$title.'" />'."\n";
       echo '              </a>'."\n";
