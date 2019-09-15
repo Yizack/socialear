@@ -16,10 +16,12 @@
     $video_facebook = "Tu video de Facebook";
     $video_twitter = "Tu video de Twitter";
     $video_instagram = "Tu video de Instagram";
+    $video_instagram = "Tu video de Youtube";
 
     $more_facebook = "Descargar más videos de Facebook";
     $more_twitter = "Descargar más videos de Twitter";
     $more_instagram = "Descargar más videos de Instagram";
+    $more_youtube = "Descargar más videos de Youtube";
 
     // Calidades de Facebook
     $sd = "Calidad SD";
