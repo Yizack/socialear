@@ -151,6 +151,7 @@
   </body>
 </html>
 <?php
+  $download = $download;
   function writeOption($size, $video) {
     $htmlstring = '				<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace like-pre"><script>document.write(("'.$size.'").padStart(9))</script></span></div><div class="input-group-append"><a class="btn btn-primary" href="'.$video.'" role="button"><i class="fas fa-download fa-fw"></i> '.$download.'</a></div></div>';
       echo "\n".''.$htmlstring;
