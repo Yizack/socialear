@@ -69,42 +69,42 @@
           case "160":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            writeOption($size, $video);
+            writeOption($size, $video, $download);
             break;
           case "133": 
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            writeOption($size, $video);
+            writeOption($size, $video, $download);
             break;
           case "134":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            writeOption($size, $video);
+            writeOption($size, $video, $download);
             break;
           case "135":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            writeOption($size, $video);
+            writeOption($size, $video, $download);
             break;
           case "136":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            writeOption($size, $video);
+            writeOption($size, $video, $download);
             break;
           case "298":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            writeOption($size, $video);
+            writeOption($size, $video, $download);
             break;
           case "137":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            writeOption($size, $video);
+            writeOption($size, $video, $download);
             break;
           case "299":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            writeOption($size, $video);
+            writeOption($size, $video, $download);
             break;
         }
       }
@@ -151,9 +151,8 @@
   </body>
 </html>
 <?php
-  $download = $download;
-  function writeOption($size, $video) {
-    $htmlstring = '				<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace like-pre"><script>document.write(("'.$size.'").padStart(9))</script></span></div><div class="input-group-append"><a class="btn btn-primary" href="'.$video.'" role="button"><i class="fas fa-download fa-fw"></i> '.$download.'</a></div></div>';
+  function writeOption($size, $video, $download) {
+    $htmlstring = '				<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace like-pre"><script>document.write(("'.$size.'").padStart(7))</script></span></div><div class="input-group-append"><a class="btn btn-primary" href="'.$video.'" role="button"><i class="fas fa-download fa-fw"></i> '.$download.'</a></div></div>';
       echo "\n".''.$htmlstring;
   }
 ?>
