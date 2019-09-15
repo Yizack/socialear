@@ -42,7 +42,7 @@
   </head>
   <body>
     <div>
-      <nav class="navbar navbar-expand-md navigation-clean">
+      <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
         <div class="container">
           <a class="navbar-brand" href="<?php if ($code !== "en"){e("/".$code);} else{echo "/";} ?>"><?php e($sitename) ?></a>
         </div>

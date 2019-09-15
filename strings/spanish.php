@@ -1,7 +1,7 @@
 <?php
     $code = "es";
     // Index
-    $sitename = "VideoDownloader";
+    $sitename = "Socialear";
     $about = "Acerca de";
     $contact = "Contacto";
     $terms = "Términos de uso";

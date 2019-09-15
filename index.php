@@ -22,7 +22,7 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
-    <title>Video Downloader</title>
+    <title><?php e($sitename) ?></title>
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"/>
     <style>
@@ -37,8 +37,8 @@
   <body>
     <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
       <div class="container">
-    <a class="navbar-brand" href="#"><?php e($sitename) ?> <span class="badge badge-secondary">Beta</span></a>
-    <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button>
+        <a class="navbar-brand" href="#"><?php e($sitename) ?> <span class="badge badge-secondary">Beta</span></a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button>
         <div class="collapse navbar-collapse" id="navcol-1"></div>
       </div>
     </nav>
