@@ -14,12 +14,15 @@
     #   135 480p mp4 (video only)
 
     # for 720p
-    #   136 1080p mp4 (video only)
     #   298 1080p60 mp4 (video only) <- 60fps
+    #   136 1080p mp4 (video only)
 
     # for 1080p
-    #   137 1080p mp4 (video only)
     #   299 1080p60 mp4 (video only) <- 60fps
+    #   137 1080p mp4 (video only)
+
+    # for Audio
+    #   140 128kps 44100Hz mp4a (audio only)
 
     function getVideoInfo($url){
         preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
