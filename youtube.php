@@ -47,7 +47,7 @@
               <div id="video_image">
 <?php
   if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    if (isset($_GET["URL"]) && ((strpos($_GET["URL"], 'youtube.com') !== false) || (strpos($_GET["URL"], 'youtu.be') !== false)) {
+    if (isset($_GET["URL"]) && ((strpos($_GET["URL"], 'youtube.com') !== false) || (strpos($_GET["URL"], 'youtu.be') !== false))) {
       $url = $_GET["URL"];
       $title = "TODO";
       $thumbnail = "TODO";
