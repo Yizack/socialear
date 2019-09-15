@@ -86,22 +86,22 @@
             $size = $video_array[$x]['quality_label'];
             writeOption($size, $video, $download);
             break;
-          case "136":
-            $video = $video_array[$x]['url'];
-            $size = $video_array[$x]['quality_label'];
-            writeOption($size, $video, $download);
-            break;
           case "298":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
             writeOption($size, $video, $download);
             break;
-          case "137":
+          case "136":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
             writeOption($size, $video, $download);
             break;
           case "299":
+            $video = $video_array[$x]['url'];
+            $size = $video_array[$x]['quality_label'];
+            writeOption($size, $video, $download);
+            break;
+          case "137":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
             writeOption($size, $video, $download);
@@ -128,7 +128,7 @@
               <div class="form-row">
                 <div class="col-12 col-md-9 mb-2 mb-md-0">
                   <div class="input-group">
-                    <input class="form-control form-control" type="text" id="URL" placeholder="https://twitter.com/EstrellaOnline/status/1138052818017947648" name="URL">
+                    <input class="form-control form-control" type="text" id="URL" placeholder="https://youtube.com/watch?v=afP4aEV66Nw" name="URL">
                   </div>
                 </div>
                 <div class="col-12 col-md-3">
