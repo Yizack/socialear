@@ -16,8 +16,8 @@
       require("strings/english.php");
     }
   }
-  // Twitter API
-  require "twitter_functions.php";
+  // Twitter Functions
+  require "functions/twitter.php";
   use Abraham\TwitterOAuth\TwitterOAuth;
 
   $consumer_key = getenv('CONSUMER_KEY');
@@ -87,7 +87,7 @@
       $htmlstring = '				<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace like-pre"><script>document.write(("'.$size[$x].'").padStart(9))</script></span></div><div class="input-group-append"><a class="btn btn-primary" href="'.$video.'" role="button"><i class="fas fa-download fa-fw"></i> '.$download.'</a></div></div>';
       echo "\n".''.$htmlstring;
       }
-  echo "\n";
+    echo "\n";
     }
   }?>
               </div>
