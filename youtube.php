@@ -68,42 +68,42 @@
         switch($val['itag']){
           case "160":
             $video = $video_array[$x]['url'];
-            $size = $video_array[$x]['size'];
+            $size = $video_array[$x]['quality_label'];
             writeOption($size, $video);
             break;
           case "133": 
             $video = $video_array[$x]['url'];
-            $size = $video_array[$x]['size'];
+            $size = $video_array[$x]['quality_label'];
             writeOption($size, $video);
             break;
           case "134":
             $video = $video_array[$x]['url'];
-            $size = $video_array[$x]['size'];
+            $size = $video_array[$x]['quality_label'];
             writeOption($size, $video);
             break;
           case "135":
             $video = $video_array[$x]['url'];
-            $size = $video_array[$x]['size'];
+            $size = $video_array[$x]['quality_label'];
             writeOption($size, $video);
             break;
           case "136":
             $video = $video_array[$x]['url'];
-            $size = $video_array[$x]['size'];
+            $size = $video_array[$x]['quality_label'];
             writeOption($size, $video);
             break;
           case "298":
             $video = $video_array[$x]['url'];
-            $size = $video_array[$x]['size'];
+            $size = $video_array[$x]['quality_label'];
             writeOption($size, $video);
             break;
           case "137":
             $video = $video_array[$x]['url'];
-            $size = $video_array[$x]['size'];
+            $size = $video_array[$x]['quality_label'];
             writeOption($size, $video);
             break;
           case "299":
             $video = $video_array[$x]['url'];
-            $size = $video_array[$x]['size'];
+            $size = $video_array[$x]['quality_label'];
             writeOption($size, $video);
             break;
         }
