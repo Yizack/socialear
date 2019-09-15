@@ -17,7 +17,7 @@
     }
   }
   // Twitter API
-  require "twitterapi/functions.php";
+  require "twitter_functions.php";
   use Abraham\TwitterOAuth\TwitterOAuth;
 
   $consumer_key = getenv('CONSUMER_KEY');

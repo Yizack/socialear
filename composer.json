@@ -1,0 +1,14 @@
+{
+    "name": "yizack/socialear",
+    "description": "Download videos from social networks",
+    "authors": [
+        {
+            "name": "Yizack Rangel",
+            "email": "yizackr@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "abraham/twitteroauth": "^1.0"
+    }
+}
