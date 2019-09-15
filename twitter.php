@@ -44,7 +44,7 @@
     <div>
       <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
         <div class="container">
-          <a class="navbar-brand" href="<?php if ($code !== "en"){e("/".$code);} else{echo "/";} ?>"><?php e($sitename) ?></a>
+          <a class="navbar-brand" href="<?php if ($code !== "en"){e("/".$code);} else{echo "/";} ?>"><?php e($sitename) ?> <span class="badge badge-secondary">Beta</span></a>
         </div>
       </nav>
     </div>
