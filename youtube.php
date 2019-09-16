@@ -52,6 +52,7 @@
       $title = "TODO";
       $thumbnail = "TODO";
       $video_array = getVideoInfo($url);
+      $audio = getValue("140", $video_array, "url");
       echo '              <a href="'.$url.'" target="_blank">'."\n";
       echo '                <img class="img-fluid d-inline" src="'.$thumbnail.'" alt="'.$title.'" title="'.$title.'" />'."\n";
       echo '              </a>'."\n";
@@ -69,47 +70,47 @@
           case "160":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            writeOption($size, $video, $download);
+            writeOption($size, $video, $audio, $download);
             break;
           case "133": 
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            writeOption($size, $video, $download);
+            writeOption($size, $video, $audio, $download);
             break;
           case "134":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            writeOption($size, $video, $download);
+            writeOption($size, $video, $audio, $download);
             break;
           case "135":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            writeOption($size, $video, $download);
+            writeOption($size, $video, $audio, $download);
             break;
           case "298":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            writeOption($size, $video, $download);
+            writeOption($size, $video, $audio, $download);
             break;
           case "136":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            writeOption($size, $video, $download);
+            writeOption($size, $video, $audio, $download);
             break;
           case "299":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            writeOption($size, $video, $download);
+            writeOption($size, $video, $audio, $download);
             break;
           case "137":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            writeOption($size, $video, $download);
+            writeOption($size, $video, $audio, $download);
             break;
           case "140":
             $video = $video_array[$x]['url'];
             $size = 'Audio';
-            writeOption($size, $video, $download);
+            writeOption($size, $video, $audio, $download);
             break;
         }
       }
@@ -156,8 +157,8 @@
   </body>
 </html>
 <?php
-  function writeOption($size, $video, $download) {
-    $htmlstring = '				<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace like-pre"><script>document.write(("'.$size.'").padStart(7))</script></span></div><div class="input-group-append"><a class="btn btn-primary" href="'.$video.'" role="button"><i class="fas fa-download fa-fw"></i> '.$download.'</a></div></div>';
+  function writeOption($size, $video, $audio, $download) {
+    $htmlstring = '				<form action="http://socialearytapi.epizy.com/index.php" method="post"><input type="hidden" id="input_audio" name="input_audio" value="'.$audio.'"><div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace like-pre"><script>document.write(("'.$size.'").padStart(7))</script></span></div><div class="input-group-append"><a class="btn btn-primary" type="submit" name="input_video" value="'.$video.'" role="button"><i class="fas fa-download fa-fw"></i> '.$download.'</a></div></div></form>';
       echo "\n".''.$htmlstring;
   }
 ?>
