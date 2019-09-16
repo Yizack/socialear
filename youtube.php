@@ -106,6 +106,11 @@
             $size = $video_array[$x]['quality_label'];
             writeOption($size, $video, $download);
             break;
+          case "140":
+            $video = $video_array[$x]['url'];
+            $size = 'Audio';
+            writeOption($size, $video, $download);
+            break;
         }
       }
     echo "\n";
