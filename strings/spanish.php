@@ -23,6 +23,9 @@
     $more_instagram = "Descargar más videos de Instagram";
     $more_youtube = "Descargar más videos de Youtube";
 
+    $language = "Idioma";
+    $flag = '<i class="em-svg em-es">';
+
     // Calidades de Facebook
     $sd = "Calidad SD";
     $hd = "Calidad HD";

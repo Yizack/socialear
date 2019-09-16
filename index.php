@@ -25,6 +25,7 @@
     <title><?php e($sitename) ?></title>
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"/>
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet"> <!-- https://afeld.github.io/emoji-css/ -->
     <style>
       .pointer{
         cursor: pointer;
@@ -38,8 +39,20 @@
     <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
       <div class="container">
         <a class="navbar-brand" href="#"><?php e($sitename) ?> <span class="badge badge-secondary">Beta</span></a>
-        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button>
-        <div class="collapse navbar-collapse" id="navcol-1"></div>
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php e($language) ?>: <?php e("$flag $code") ?></a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/en"><i class="em-svg em-us"></i> English</a>
+              <a class="dropdown-item" href="/es"><i class="em-svg em-es"></i> Español</a>
+              <!--<a class="dropdown-item" href="/it"><i class="em-svg em-it"></i> Italiano</a>-->
+              <!--<a class="dropdown-item" href="/pt"><i class="em-svg em-flag-pt"></i> Português</a>-->
+              <!--<a class="dropdown-item" href="/fr"><i class="em-svg em-fr"></i> Français</a>-->
+              <!--<a class="dropdown-item" href="/de"><i class="em-svg em-de"></i> Deutsch</a>-->
+              <!--<a class="dropdown-item" href="/nl"><i class="em-svg em-flag-nl"></i> Nederlands</a>-->
+            </div>
+          </li>
+        </ul>
       </div>
     </nav>
     <header class="masthead text-white text-center" style="background:#343a40;">
