@@ -158,7 +158,7 @@
 </html>
 <?php
   function writeOption($size, $video, $audio, $download) {
-    $htmlstring = '				<form action="http://socialearytapi.epizy.com/index.php" method="post"><input type="hidden" id="input_audio" name="input_audio" value="'.$audio.'"><div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace like-pre"><script>document.write(("'.$size.'").padStart(7))</script></span></div><div class="input-group-append"><a class="btn btn-primary" type="submit" name="input_video" value="'.$video.'" role="button"><i class="fas fa-download fa-fw"></i> '.$download.'</a></div></div></form>';
+    $htmlstring = '				<form action="http://socialearytapi.epizy.com/index.php" method="post"><input type="hidden" id="input_audio" name="input_audio" value="'.$audio.'"><div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace like-pre"><script>document.write(("'.$size.'").padStart(7))</script></span></div><div class="input-group-append"><button class="btn btn-primary" type="submit" name="input_video" value="'.$video.'" role="button"><i class="fas fa-download fa-fw"></i> '.$download.'</button></div></div></form>';
       echo "\n".''.$htmlstring;
   }
 ?>
