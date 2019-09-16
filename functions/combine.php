@@ -8,15 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
         system($cmd);
         header("Content-Type: video/mp4");
         header('Content-disposition: attachment; filename='.$filename.'');
+        readfile($filename);
         ignore_user_abort(true);
-        $context = stream_context_create();
-        $file = fopen($filename, 'rb', FALSE, $context);
-        while(!feof($file))
-        {
-            echo stream_get_contents($file, 2014);
-        }
-        fclose($file);
-        flush();
         if (file_exists($filename)) {
             unlink($filename);
         }
