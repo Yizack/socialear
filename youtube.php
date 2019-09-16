@@ -108,9 +108,10 @@
             writeOption($size, $video, $audio, $download);
             break;
           case "140":
-            $video = $video_array[$x]['url'];
+            $audio = $video_array[$x]['url'];
             $size = 'Audio';
-            writeOption($size, $video, $audio, $download);
+            $htmlstring = '				<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace like-pre"><script>document.write(("'.$size.'").padStart(7))</script></span></div><div class="input-group-append"><a class="btn btn-primary" href="'.$audio.'" role="button"><i class="fas fa-download fa-fw"></i> '.$download.'</a></div></div>';
+              echo "\n".''.$htmlstring;
             break;
         }
       }
