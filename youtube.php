@@ -129,7 +129,7 @@
             <h2 class="text-center p-5"><?php e($more_youtube) ?></h2>
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <form action="<?php if ($code !== "en"){e("/".$code);} ?>/twitter" method="get">
+            <form action="<?php if ($code !== "en"){e("/".$code);} ?>/youtube" method="get">
               <div class="form-row">
                 <div class="col-12 col-md-9 mb-2 mb-md-0">
                   <div class="input-group">
