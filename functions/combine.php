@@ -1,6 +1,6 @@
 <?php
-    $video = "http://socialearytapi.epizy.com/videoplayback.mp4";
-    $audio = "http://socialearytapi.epizy.com/videoplayback.m4a";
+    $video = "http://socialearytapi.epizy.com/download.php?filename=videoplayback.mp4";
+    $audio = "http://socialearytapi.epizy.com/download.php?filename=videoplayback.m4a";
     $cmd = "ffmpeg -y -i ".$video." -i ".$audio." -c copy -map 0:v -map 1:a output.mp4";
     system($cmd);
 ?>
