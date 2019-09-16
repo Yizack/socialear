@@ -24,7 +24,7 @@
     $more_youtube = "Download more Youtube videos";
 
     $language = "Language";
-    $flag = '<i class="em-svg em-us">';
+    $flag = '<i class="em-svg em-us"></i>';
 
     // Facebook Quality
     $sd = "SD Quality";
