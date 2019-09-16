@@ -27,7 +27,7 @@
     function getVideoInfo($url){
         preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
         $id = $match[1];
-        $data = file_get_contents('http://youtube.com/get_video_info?video_id=' . $id);
+        $data = file_get_contents("http://youtube.com/get_video_info?video_id=$id");
         $output = array();
         parse_str($data , $details);
         foreach (explode(',' , $details['adaptive_fmts']) AS $quality) {
