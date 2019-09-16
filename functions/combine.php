@@ -1,6 +1,6 @@
 <?php
 
-function downloadInput($url, $filename){
+function downloadInput($url, $fileName){
     $downloadedFileContents = file_get_contents($url);
 
     if($downloadedFileContents === false){
