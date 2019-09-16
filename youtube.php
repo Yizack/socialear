@@ -108,6 +108,7 @@
             break;
         }
       }
+    writeOption("Audio", getValue("140",$video_array,"url"), $download);
     echo "\n";
     }
   }?>
