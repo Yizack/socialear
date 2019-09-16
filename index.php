@@ -56,7 +56,6 @@
       </div>
     </nav>
     <header class="masthead text-white text-center" style="background:#343a40;">
-      <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
