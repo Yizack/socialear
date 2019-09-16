@@ -12,7 +12,7 @@ if(isset($_POST["submit"])) {
 ?>
 <html>
   <body>
-    <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST" enctype="multipart/form-data">
+    <form action="/functions/combine" method="POST" enctype="multipart/form-data">
       <input type="file" name="input_video" placeholder="video"><br><br>
       <input type="file" name="input_audio" placeholder="audio"><br><br>
       <input type="submit" name="submit">
