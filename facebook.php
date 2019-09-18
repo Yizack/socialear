@@ -57,7 +57,7 @@
         <div class="row align-items-center">
           <div class="col-lg-6 order-lg-1">
             <div class="text-center p-5">
-              <h2><?php e($video_facenook) ?></h2>
+              <h2><?php e($video_facebook) ?></h2>
               <div id="video_image">
               </div>
             </div>
