@@ -29,8 +29,4 @@
     // Calidades de Facebook
     $sd = "Calidad SD";
     $hd = "Calidad HD";
-
-    function e($text) {
-        echo $text;
-    }
 ?>

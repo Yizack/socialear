@@ -29,8 +29,4 @@
     // Facebook Quality
     $sd = "SD Quality";
     $hd = "HD Quality";
-
-    function e($text) {
-        echo $text;
-    }
 ?>
