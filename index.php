@@ -1,4 +1,5 @@
 <?php
+  require("functions/global.php"); // Global functions
   // Language
   if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET["lang"])) {
