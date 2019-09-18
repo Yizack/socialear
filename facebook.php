@@ -119,14 +119,14 @@
       
       e('        if(video_hd){'."\n");
       e('          thumbnail = facebookURL(data, "_4lpf", "/></div>", 2, 7).replace(/amp;/g, "");'."\n");
-      e('	        $(\'#video_image\').append(\'<a href="\' + url + \'" target="_blank"><img class="img-fluid d-inline" src="\'+ thumbnail +\'" alt="\' + title + \'" title="\' + title + \'" /></a>\');'."\n");      
-      e('          $(\'#video_options\').append(\'<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace">'.$sd.'</span></div><div class="input-group-append"><a class="btn btn-primary" href="\'+ video_sd + \'" role="button"><i class="fas fa-download fa-fw"></i> '.$download,'</a></div></div>\');'."\n");
-      e('          $(\'#video_options\').append(\'<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace">'.$hd.'</span></div><div class="input-group-append"><a class="btn btn-primary" href="\'+ video_hd + \'" role="button"><i class="fas fa-download fa-fw"></i> '.$download,'</a></div></div>\');'."\n");
-      e('	      }'."\n");
+      e('	         $(\'#video_image\').append(\'<a href="\' + url + \'" target="_blank"><img class="img-fluid d-inline" src="\'+ thumbnail +\'" alt="\' + title + \'" title="\' + title + \'" /></a>\');'."\n");      
+      e('          $(\'#video_options\').append(\'<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace">'.$sd.'</span></div><div class="input-group-append"><a class="btn btn-primary" href="\'+ video_sd + \'" role="button"><i class="fas fa-download fa-fw"></i> '.$download.'</a></div></div>\');'."\n");
+      e('          $(\'#video_options\').append(\'<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace">'.$hd.'</span></div><div class="input-group-append"><a class="btn btn-primary" href="\'+ video_hd + \'" role="button"><i class="fas fa-download fa-fw"></i> '.$download.'</a></div></div>\');'."\n");
+      e('	       }'."\n");
       e('        else {'."\n");
       e('          thumbnail = $(data).filter(\'meta[property="twitter:image"]\').attr("content");'."\n");
       e('          $(\'#video_image\').append(\'<a href="\' + url + \'" target="_blank"><img class="img-fluid d-inline" src="\'+ thumbnail +\'" alt="\' + title + \'" title="\' + title + \'" /></a>\');'."\n");
-      e('          $(\'#video_options\').append(\'<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text" text-monospace>'.$sd.'</span></div><div class="input-group-append"><a class="btn btn-primary" href="\'+ video_sd + \'" role="button"><i class="fas fa-download fa-fw"></i> '.$download,'</a></div></div>\');'."\n");
+      e('          $(\'#video_options\').append(\'<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text" text-monospace>'.$sd.'</span></div><div class="input-group-append"><a class="btn btn-primary" href="\'+ video_sd + \'" role="button"><i class="fas fa-download fa-fw"></i> '.$download.'</a></div></div>\');'."\n");
       e('        }'."\n");
       e('      });'."\n");
       e('      function facebookURL(data, antes, despues, n1, n2) {'."\n");
