@@ -25,7 +25,7 @@
     <title><?php e($sitename) ?></title>
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"/>
-    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet"> <!-- https://afeld.github.io/emoji-css/ -->
+    <link rel="stylesheet" href="https://afeld.github.io/emoji-css/emoji.css"/> <!-- https://afeld.github.io/emoji-css/ -->
     <style>
       .pointer{
         cursor: pointer;
