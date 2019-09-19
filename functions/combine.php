@@ -1,5 +1,4 @@
 <?php
-    ftp://[user[:password]@]server[:port]/path/to/remote/resource.mpeg
     $user = getenv('FTP_USER');
     $password = getenv('FTP_PASSWORD');
     $host = getenv('FTP_HOST');
@@ -13,12 +12,3 @@
 
     system($cmd);
 ?>
-<html>
-  <body>
-    <form action="/functions/combine" method="POST" enctype="multipart/form-data">
-      <input type="file" name="input_video" id="input_video" placeholder="video"><br><br>
-      <input type="file" name="input_audio" id="input_audio" placeholder="audio"><br><br>
-      <button type="submit" name="submit">Combinar</button>
-    </form>
-  </body>
-</html>
