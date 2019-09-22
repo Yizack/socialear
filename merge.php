@@ -62,7 +62,7 @@ foreach ($files as $file) {
     <header class="text-white text-center" style="background:#343a40;">
       <div class="container">
         <div class="row">
-          <div class="col-xl-9 mx-auto mt-5">
+          <div class="col-xl-9 mx-auto mt-5 mb-5">
             <h1 class="mb-5">Merge video and audio</h1>
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto text-left">
@@ -71,7 +71,7 @@ foreach ($files as $file) {
                     if (isset($_GET["token"])) {
                         $token = $_GET["token"];
                         e("            <div class='alert alert-success'>\n");
-                        e("            <strong>Success!</strong> Here is your converted video: <a href='/ffmpeg/output/video-$token.mp4'>video-$token.mp4</a>.\n");
+                        e("            <strong>Success!</strong> Here is your converted video: <a href='/ffmpeg/output/video-$token.mp4'>video-$token.mp4</a>\n");
                         e("            </div>\n");
                     }
                 }
@@ -129,7 +129,7 @@ foreach ($files as $file) {
             $("#submit").html('<span class="spinner-border spinner-border-sm"></span> Uploading...');
         }
     </script>
-    <footer class="footer" style="background:#fff;">
+    <footer class="footer" style="background:#343a40;">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 my-auto h-100 text-center text-lg-left">
