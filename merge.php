@@ -1,5 +1,4 @@
 <?php
-require("functions/global.php"); // Global functions
 // Language
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   if (isset($_GET["lang"])) {
@@ -92,15 +91,15 @@ foreach ($files as $file) {
 ?>
               <h2><?php e($merge_choose); ?></h2>
               <form action="http://socialearytapi.epizy.com/" method="POST" enctype="multipart/form-data">
-                <p><?php e($video); ?>:</p>
+                <p><?php e(ucfirst($video)); ?>:</p>
                 <div class="custom-file mb-3">
                   <input type="file" class="custom-file-input" id="input_video" name="input_video" accept="video/mp4" required>
                   <label class="custom-file-label" for="input_video" ><?php e($merge_choose_video); ?></label>
                 </div>
-                <p><?php e($audio); ?>:</p>
+                <p><?php e(ucfirst($audio)); ?>:</p>
                 <div class="custom-file mb-3">
                   <input type="file" class="custom-file-input" id="input_audio" name="input_audio" accept="audio/mp3, audio/x-m4a" required>
-                  <label class="custom-file-label" for="input_audio"><?php e($merge_choose_video); ?></label>
+                  <label class="custom-file-label" for="input_audio"><?php e($merge_choose_audio); ?></label>
                 </div>
                 <div class="mt-3 mb-5">
                   <button class="btn btn-success btn-block" id="submit" name="submit" type="submit" onclick="loading();"><?php e($merge); ?></button>
