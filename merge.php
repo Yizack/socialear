@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"/>
     <link rel="stylesheet" href="https://afeld.github.io/emoji-css/emoji.css"/> <!-- https://afeld.github.io/emoji-css/ -->
   </head>
-  <body>
+  <body class="bg-light">
   <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
       <div class="container">
         <a class="navbar-brand" href="/">Socialear <span class="badge badge-secondary">Beta</span></a>
@@ -133,7 +133,7 @@
         </div>
       </div>
     </section>
-    <footer class="footer" style="background:#343a40;">
+    <footer class="footer">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 my-auto h-100 text-center text-lg-left">

@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="/css/main.css"/>
     <link rel="stylesheet" href="https://afeld.github.io/emoji-css/emoji.css"/> <!-- https://afeld.github.io/emoji-css/ -->
   </head>
-  <body>
+  <body class="bg-light">
     <div>
       <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
         <div class="container">

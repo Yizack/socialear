@@ -36,7 +36,7 @@
       }
     </style>
   </head>
-  <body>
+  <body class="bg-light">
     <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
       <div class="container">
         <a class="navbar-brand" href="#"><?php e($sitename) ?> <span class="badge badge-secondary">Beta</span></a>
@@ -88,7 +88,7 @@
         </div>
       </div>
     </header>
-    <section class="features-icons bg-light text-center">
+    <section class="features-icons text-center">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -122,7 +122,7 @@
         $("form").attr("action", "<?php if ($code !== "en"){e("/".$code);} ?>/facebook");
       }
     </script>
-    <footer class="footer" style="background:#fff;">
+    <footer class="footer">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 my-auto h-100 text-center text-lg-left">
