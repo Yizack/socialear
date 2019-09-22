@@ -60,7 +60,7 @@
     $merge_step3 = "Choose your $audio_only file.";
     $merge_step4 = "Click on $merge_qb button and wait for files to upload.";
     $merge_step5 = "A link to your temporary merged video will appear with a unique identifier.";
-    $merge_step5 = "Click on your link, then download it or $right_click on your link then click $save_as to download.";
+    $merge_step6 = "Click on your link, then download it or $right_click on your link then click $save_as to download.";
     $note = "Note";
     $merge_note1 = "Your merged video will be deleted from our servers in 10 minutes.";
     $uploading = "Uploading";

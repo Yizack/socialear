@@ -60,7 +60,7 @@
     $merge_step3 = "Elige tu archivo de $audio_only.";
     $merge_step4 = "Clic en el botón $merge_qb y espera que tus archivos se suban.";
     $merge_step5 = "Aparecerá temporalmente un enlace a tu video unido con un identificador único.";
-    $merge_step5 = "Clic en tu enlace y descargar, o $right_click en tu enlace y luego clic en $save_as para descargar.";
+    $merge_step6 = "Clic en tu enlace y descargar, o $right_click en tu enlace y luego clic en $save_as para descargar.";
     $note = "Nota";
     $merge_note1 = "Tu video unido será eliminado de nuestros servidores en 10 minutos.";
     $uploading = "Subiendo";
