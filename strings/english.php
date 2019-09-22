@@ -1,5 +1,5 @@
 <?php
-    require("functions/global.php"); // Global functions
+    require("functions/strings.php"); // Global functions
 
     $language = "Language";
     $flag = '<i class="em-svg em-us"></i>';

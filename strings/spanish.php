@@ -1,5 +1,5 @@
 <?php
-    require("functions/global.php"); // Funciones globales
+    require("functions/strings.php"); // Funciones globales
 
     $code = "es";
     $language = "Idioma";
