@@ -76,9 +76,6 @@ foreach ($files as $file) {
                     }
                 }
             ?>
-            <div class="alert alert-success">
-              <strong>Success!</strong> Here is your converted video: <a href='/ffmpeg/output/video-$token.mp4'>video-$token.mp4</a>.
-            </div>
             <h2>Choose your files</h2>
             <form action="http://socialearytapi.epizy.com/" method="POST" enctype="multipart/form-data">
               <p>Video:</p>
