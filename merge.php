@@ -21,10 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 $files = glob("ffmpeg/output/*");
 $now   = time();
 foreach ($files as $file) {
-	if (is_file($file)) {
+  if (is_file($file)) {
       if ($now - filemtime($file) >= 60 * 10) { // 10 min
-    	unlink($file);
-    	}
+      unlink($file);
+      }
     }
 }
 ?>
@@ -67,14 +67,14 @@ foreach ($files as $file) {
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto text-left">
             <?php
-                if ($_SERVER["REQUEST_METHOD"] == "GET") {
-                    if (isset($_GET["token"])) {
-                        $token = $_GET["token"];
-                        e("            <div class='alert alert-success'>\n");
-                        e("            <strong>Success!</strong> Here is your converted video: <a href='/ffmpeg/output/video-$token.mp4'>video-$token.mp4</a>\n");
-                        e("            </div>\n");
-                    }
+              if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                if (isset($_GET["token"])) {
+                  $token = $_GET["token"];
+                  e("            <div class='alert alert-success'>\n");
+                  e("            <strong>Success!</strong> Here is your converted video: <a href='/ffmpeg/output/video-$token.mp4'>video-$token.mp4</a>\n");
+                  e("            </div>\n");
                 }
+              }
             ?>
             <h2>Choose your files</h2>
             <form action="http://socialearytapi.epizy.com/" method="POST" enctype="multipart/form-data">
@@ -98,26 +98,26 @@ foreach ($files as $file) {
       </div>
     </header>
     <section>
-    <div class="container mt-5" id="how-to-use">
-      <div class="text-center text-dark">
-        <h3>How to use Merge</h3>
+      <div class="container mt-5 mb-5" id="how-to-use">
+        <div class="text-center text-dark">
+          <h3>How to use Merge</h3>
+        </div>
+        <div class="text-left text-dark">
+          <h3><small>Step 1</small></h3>
+          <p>Have downloaded a <b>"video-only"</b> and an <b>"audio-only"</b> files at <a href="/youtube" target="_blank">https://socialear.yizack.com/youtube</a>.</p>
+          <h3><small>Step 2</small></h3>
+          <p>Choose your <b>"video-only"</b> file.</p>
+          <h3><small>Step 3</small></h3>
+          <p>Choose your <b>"audio-only"</b> file.</p>
+          <h3><small>Step 4</small></h3>
+          <p>Click on <b>"Merge"</b> button and wait for files to upload.</p>
+          <h3><small>Step 5</small></h3>
+          <p>A link to your temporary merged video will appear with a unique identifier.</p>
+          <p><span class="badge badge-secondary">Note 1:</span> Your merged video will be deleted from our servers in 10 minutes.</p>
+          <h3><small>Step 6</small></h3>
+          <p>Click on your link, then download it or <b>"Right Click"</b> on your link then click <b>"Save link as..."</b> to download.</p>
+        </div>
       </div>
-      <div class="text-left text-dark">
-        <h3><small>Step 1</small></h3>
-        <p>Have downloaded a <b>"video-only"</b> and an <b>"audio-only"</b> files at <a href="/youtube" target="_blank">https://socialear.yizack.com/youtube</a>.</p>
-        <h3><small>Step 2</small></h3>
-        <p>Choose your <b>"video-only"</b> file.</p>
-        <h3><small>Step 3</small></h3>
-        <p>Choose your <b>"audio-only"</b> file.</p>
-        <h3><small>Step 4</small></h3>
-        <p>Click on <b>"Merge"</b> button and wait for files to upload.</p>
-        <h3><small>Step 5</small></h3>
-        <p>A link to your temporary merged video will appear with a unique identifier.</p>
-        <p><span class="badge badge-secondary">Note 1:</span> Your merged video will be deleted from our servers in 10 minutes.</p>
-        <h3><small>Step 6</small></h3>
-        <p>Click on your link, then download it or <b>"Right Click"</b> on your link then click <b>"Save link as..."</b> to download.</p>
-      </div>
-    </div>
     </section>
     <footer class="footer" style="background:#343a40;">
       <div class="container">
@@ -144,6 +144,9 @@ foreach ($files as $file) {
         </div>
       </div>
     </footer>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/cc91b92ca8.js"></script>
     <script> 
         $(".custom-file-input").on("change", function() {
         var fileName = $(this).val().split("\\").pop();
@@ -153,8 +156,5 @@ foreach ($files as $file) {
             $("#submit").html('<span class="spinner-border spinner-border-sm"></span> Uploading...');
         }
     </script>
-    <script src="/js/jquery-3.4.1.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/cc91b92ca8.js"></script>
   </body>
 </html>
