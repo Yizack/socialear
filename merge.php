@@ -74,6 +74,20 @@ foreach ($files as $file) {
                   e("            <strong>Success!</strong> Here is your converted video: <a href='/ffmpeg/output/video-$token.mp4'>video-$token.mp4</a>\n");
                   e("            </div>\n");
                 }
+                else if(isset($_GET["error"])) {
+                  switch($_GET["error"]) {
+                    case "format":
+                      e("            <div class='alert alert-danger'>\n");
+                      e("            <strong>Error:</strong> Invalid file format.\n");
+                      e("            </div>\n");
+                      break;
+                    case "upload":
+                      e("            <div class='alert alert-danger'>\n");
+                      e("            <strong>Error:</strong> Uploading error.\n");
+                      e("            </div>\n");
+                      break;
+                  }
+                }
               }
             ?>
             <h2>Choose your files</h2>
