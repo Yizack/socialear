@@ -70,7 +70,6 @@ foreach ($files as $file) {
                 if ($_SERVER["REQUEST_METHOD"] == "GET") {
                   if (isset($_GET["token"])) {
                     $token = $_GET["token"];
-                    e("\n");
                     e("              <div class='alert alert-success'>\n");
                     e("                <strong>Success!</strong> Here is your converted video: <a href='/ffmpeg/output/video-$token.mp4'>video-$token.mp4</a>\n");
                     e("              </div>\n");
@@ -78,7 +77,6 @@ foreach ($files as $file) {
                   else if(isset($_GET["error"])) {
                     switch($_GET["error"]) {
                       case "format":
-                        e("\n");
                         e("              <div class='alert alert-danger'>\n");
                         e("                <strong>Error:</strong> Invalid file format.\n");
                         e("              </div>\n");
