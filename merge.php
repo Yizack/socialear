@@ -119,16 +119,6 @@ foreach ($files as $file) {
       </div>
     </div>
     </section>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script> 
-        $(".custom-file-input").on("change", function() {
-        var fileName = $(this).val().split("\\").pop();
-        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-        });
-        function loading(){
-            $("#submit").html('<span class="spinner-border spinner-border-sm"></span> Uploading...');
-        }
-    </script>
     <footer class="footer" style="background:#343a40;">
       <div class="container">
         <div class="row">
@@ -154,5 +144,17 @@ foreach ($files as $file) {
         </div>
       </div>
     </footer>
+    <script> 
+        $(".custom-file-input").on("change", function() {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+        function loading(){
+            $("#submit").html('<span class="spinner-border spinner-border-sm"></span> Uploading...');
+        }
+    </script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/cc91b92ca8.js"></script>
   </body>
 </html>
