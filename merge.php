@@ -45,7 +45,7 @@ foreach ($files as $file) {
         <a class="navbar-brand" href="#">Socialear <span class="badge badge-secondary">Beta</span></a>
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language: <i class="em-svg em-us"></i> EN</a>
+            <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language: <i class="em-svg em-us"></i> EN</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="<?php replace_lang("en", isset($_GET["lang"])); ?>"><i class="em-svg em-us"></i> English</a>
               <a class="dropdown-item" href="<?php replace_lang("es", isset($_GET["lang"])); ?>"><i class="em-svg em-es"></i> Español</a>
@@ -163,13 +163,13 @@ foreach ($files as $file) {
     <script src="/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/cc91b92ca8.js"></script>
     <script> 
-        $(".custom-file-input").on("change", function() {
-        var fileName = $(this).val().split("\\").pop();
-        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-        });
-        function loading(){
-            $("#submit").html('<span class="spinner-border spinner-border-sm"></span> Uploading...');
-        }
+      $(".custom-file-input").on("change", function() {
+      var fileName = $(this).val().split("\\").pop();
+      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+      });
+      function loading(){
+        $("#submit").html('<span class="spinner-border spinner-border-sm"></span> Uploading...');
+      }
     </script>
   </body>
 </html>
