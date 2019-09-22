@@ -45,7 +45,7 @@
         <a class="navbar-brand" href="/">Socialear <span class="badge badge-secondary">Beta</span></a>
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language: <i class="em-svg em-us"></i> EN</a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php e($language) ?>: <?php e("$flag ".strtoupper($code)) ?></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="<?php replace_lang("en", isset($_GET["lang"])); ?>"><i class="em-svg em-us"></i> English</a>
               <a class="dropdown-item" href="<?php replace_lang("es", isset($_GET["lang"])); ?>"><i class="em-svg em-es"></i> Español</a>
