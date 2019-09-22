@@ -62,50 +62,50 @@ foreach ($files as $file) {
     <header class="text-white text-center" style="background:#343a40;">
       <div class="container">
         <div class="row">
-          <div class="col-xl-9 mx-auto mt-5 mb-5">
+          <div class="col-xl-9 mx-auto mt-5">
             <h1 class="mb-5">Merge video and audio</h1>
           </div>
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto text-left">
-            <?php
-              if ($_SERVER["REQUEST_METHOD"] == "GET") {
-                if (isset($_GET["token"])) {
-                  $token = $_GET["token"];
-                  e("            <div class='alert alert-success'>\n");
-                  e("            <strong>Success!</strong> Here is your converted video: <a href='/ffmpeg/output/video-$token.mp4'>video-$token.mp4</a>\n");
-                  e("            </div>\n");
-                }
-                else if(isset($_GET["error"])) {
-                  switch($_GET["error"]) {
-                    case "format":
-                      e("            <div class='alert alert-danger'>\n");
-                      e("            <strong>Error:</strong> Invalid file format.\n");
-                      e("            </div>\n");
-                      break;
-                    case "upload":
-                      e("            <div class='alert alert-danger'>\n");
-                      e("            <strong>Error:</strong> Uploading error.\n");
-                      e("            </div>\n");
-                      break;
+            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto text-left">
+              <?php
+                if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                  if (isset($_GET["token"])) {
+                    $token = $_GET["token"];
+                    e("            <div class='alert alert-success'>\n");
+                    e("            <strong>Success!</strong> Here is your converted video: <a href='/ffmpeg/output/video-$token.mp4'>video-$token.mp4</a>\n");
+                    e("            </div>\n");
+                  }
+                  else if(isset($_GET["error"])) {
+                    switch($_GET["error"]) {
+                      case "format":
+                        e("            <div class='alert alert-danger'>\n");
+                        e("            <strong>Error:</strong> Invalid file format.\n");
+                        e("            </div>\n");
+                        break;
+                      case "upload":
+                        e("            <div class='alert alert-danger'>\n");
+                        e("            <strong>Error:</strong> Uploading error.\n");
+                        e("            </div>\n");
+                        break;
+                    }
                   }
                 }
-              }
-            ?>
-            <h2>Choose your files</h2>
-            <form action="http://socialearytapi.epizy.com/" method="POST" enctype="multipart/form-data">
-              <p>Video:</p>
-              <div class="custom-file mb-3">
-                <input type="file" class="custom-file-input" id="input_video" name="input_video" accept="video/mp4" required>
-                <label class="custom-file-label" for="input_video" >Choose <b>video</b> file</label>
-              </div>
-              <p>Audio:</p>
-              <div class="custom-file mb-3">
-                <input type="file" class="custom-file-input" id="input_audio" name="input_audio" accept="audio/mp3, audio/x-m4a" required>
-                <label class="custom-file-label" for="input_audio">Choose <b>audio</b> file</label>
-              </div>
-              <div class="mt-3 mb-5">
-                <button class="btn btn-success btn-block" id="submit" name="submit" type="submit" onclick="loading();">Merge</button>
-              </div>
-            </form>
+              ?>
+              <h2>Choose your files</h2>
+              <form action="http://socialearytapi.epizy.com/" method="POST" enctype="multipart/form-data">
+                <p>Video:</p>
+                <div class="custom-file mb-3">
+                  <input type="file" class="custom-file-input" id="input_video" name="input_video" accept="video/mp4" required>
+                  <label class="custom-file-label" for="input_video" >Choose <b>video</b> file</label>
+                </div>
+                <p>Audio:</p>
+                <div class="custom-file mb-3">
+                  <input type="file" class="custom-file-input" id="input_audio" name="input_audio" accept="audio/mp3, audio/x-m4a" required>
+                  <label class="custom-file-label" for="input_audio">Choose <b>audio</b> file</label>
+                </div>
+                <div class="mt-3 mb-5">
+                  <button class="btn btn-success btn-block" id="submit" name="submit" type="submit" onclick="loading();">Merge</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
