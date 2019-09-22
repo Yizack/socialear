@@ -167,7 +167,8 @@
       $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
       });
       function loading(){
-        $("#submit").html('<span class="spinner-border spinner-border-sm"></span> <?php e($uploading) ?>...');
+        if($('#input_video').val() != false && $('#input_audio').val() != false)
+          $("#submit").html('<span class="spinner-border spinner-border-sm"></span> <?php e($uploading) ?>...');
       }
     </script>
   </body>
