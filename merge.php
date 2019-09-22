@@ -47,8 +47,8 @@ foreach ($files as $file) {
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language: <i class="em-svg em-us"></i> EN</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/en"><i class="em-svg em-us"></i> English</a>
-              <a class="dropdown-item" href="/es"><i class="em-svg em-es"></i> Español</a>
+              <a class="dropdown-item" href="<?php replace_lang("en", isset($_GET["lang"])); ?>"><i class="em-svg em-us"></i> English</a>
+              <a class="dropdown-item" href="<?php replace_lang("es", isset($_GET["lang"])); ?>"><i class="em-svg em-es"></i> Español</a>
               <!--<a class="dropdown-item" href="/it"><i class="em-svg em-it"></i> Italiano</a>-->
               <!--<a class="dropdown-item" href="/pt"><i class="em-svg em-flag-pt"></i> Português</a>-->
               <!--<a class="dropdown-item" href="/fr"><i class="em-svg em-fr"></i> Français</a>-->
@@ -66,30 +66,33 @@ foreach ($files as $file) {
             <h1 class="mb-5">Merge video and audio</h1>
           </div>
             <div class="col-md-10 col-lg-8 col-xl-7 mx-auto text-left">
-              <?php
+<?php
                 if ($_SERVER["REQUEST_METHOD"] == "GET") {
                   if (isset($_GET["token"])) {
                     $token = $_GET["token"];
-                    e("            <div class='alert alert-success'>\n");
-                    e("            <strong>Success!</strong> Here is your converted video: <a href='/ffmpeg/output/video-$token.mp4'>video-$token.mp4</a>\n");
-                    e("            </div>\n");
+                    e("\n");
+                    e("              <div class='alert alert-success'>\n");
+                    e("                <strong>Success!</strong> Here is your converted video: <a href='/ffmpeg/output/video-$token.mp4'>video-$token.mp4</a>\n");
+                    e("              </div>\n");
                   }
                   else if(isset($_GET["error"])) {
                     switch($_GET["error"]) {
                       case "format":
-                        e("            <div class='alert alert-danger'>\n");
-                        e("            <strong>Error:</strong> Invalid file format.\n");
-                        e("            </div>\n");
+                        e("\n");
+                        e("              <div class='alert alert-danger'>\n");
+                        e("                <strong>Error:</strong> Invalid file format.\n");
+                        e("              </div>\n");
                         break;
                       case "upload":
-                        e("            <div class='alert alert-danger'>\n");
-                        e("            <strong>Error:</strong> Uploading error.\n");
-                        e("            </div>\n");
+                        e("\n");
+                        e("              <div class='alert alert-danger'>\n");
+                        e("                <strong>Error:</strong> Uploading error.\n");
+                        e("              </div>\n");
                         break;
                     }
                   }
                 }
-              ?>
+?>
               <h2>Choose your files</h2>
               <form action="http://socialearytapi.epizy.com/" method="POST" enctype="multipart/form-data">
                 <p>Video:</p>
