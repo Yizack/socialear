@@ -94,7 +94,7 @@
             <div class="mx-auto p-5">
               <p class="text-left" id="video_title"><?php e($title) ?></p>
               <div class="mx-auto" id="video_options">
-                <p class="text-left"><?php e($options) ?></p><?php
+                <p class="text-left"><?php e($options) ?>:</p><?php
       for ($x = 0; $x < count($video_array); $x++) {
       $video = $video_array[$x]['url'];
       $last = explode("/", $video, substr_count($video, "/"));

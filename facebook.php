@@ -66,7 +66,7 @@
             <div class="mx-auto p-5">
               <p class="text-center" id="video_title"></p>
               <div class="mx-auto" id="video_options">
-                <p class="text-left"><?php e($options) ?></p>
+                <p class="text-left"><?php e($options) ?>:</p>
               </div>
             </div>
           </div>

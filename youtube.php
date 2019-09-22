@@ -79,7 +79,7 @@
             <div class="mx-auto p-5">
               <p class="text-left" id="video_title"><?php e($title) ?></p>
               <div class="mx-auto" id="video_options">
-                <p class="text-left"><?php e($options) ?></p><?php
+                <p class="text-left"><?php e($options) ?>:</p><?php
       foreach ($video_array as $x => $val) {
         switch($val['itag']){
           case "160":
