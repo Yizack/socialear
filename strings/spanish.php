@@ -37,8 +37,8 @@
     $merge_title = "$merge video y audio";
     $merge_choose = "Elige tus archivos";
 
-    $video = "Video";
-    $audio = "Audio";
+    $video = "video";
+    $audio = "audio";
 
     $video_b = bold("video");
     $audio_b = bold("audio");
@@ -48,11 +48,11 @@
 
     $merge_how = "Cómo usar $merge";
 
-    $merge_qb = quotation(bold($merge));
-    $video_only = quotation(bold("solo video"));
-    $audio_only = quotation(bold("solo audio"));
-    $right_click = quotation(bold("Clic derecho"));
-    $save_as = quotation(bold("Guardar enlace como...."));
+    $merge_qb = bold(quotation($merge));
+    $video_only = bold(quotation("solo video"));
+    $audio_only = bold(quotation("solo audio"));
+    $right_click = bold(quotation("Clic derecho"));
+    $save_as = bold(quotation("Guardar enlace como...."));
 
     $step = "Paso";
     $merge_step1 = "Haber descargado un archivo de $video_only y uno de $audio_only en";
