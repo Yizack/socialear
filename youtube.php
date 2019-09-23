@@ -60,7 +60,7 @@
           <div class="col-lg-12 order-lg-1">
             <div class="alert alert-warning alert-dismissible mt-5">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
-              Currently copyrighted videos can't be downloaded, we are working to make it possible in the future.
+              <strong>Notification:</strong> Currently copyrighted videos can't be downloaded, we are working to make it possible in the future.
             </div>
           </div>
           <div class="col-lg-6 order-lg-1">
