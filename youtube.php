@@ -57,6 +57,11 @@
     <section class="video_download text-white">
       <div class="container">
         <div class="row align-items-center">
+          <div class="col-lg-12 order-lg-1">
+            <div class="alert alert-warning alert-dismissible mt-5">
+              Currently copyrighted videos can't be downloaded, we are working to make it possible in the future.
+            </div>
+          </div>
           <div class="col-lg-6 order-lg-1">
             <div class="text-center p-5">
               <h2><?php e($video_youtube) ?></h2>
