@@ -24,9 +24,16 @@
     # for Audio
     #   140 128kps 44100Hz mp4a (audio only)
 
-    function getVideoInfo($url){
+    // Return video ID
+    function getID($url) {
         preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
         $id = $match[1];
+        return $id;
+    }
+
+    // Return thumbnail
+    function getVideoInfo($url) {
+        $id = getID($url);
         $data = file_get_contents("http://youtube.com/get_video_info?video_id=$id");
         $output = array();
         parse_str($data , $details);
@@ -36,8 +43,14 @@
         }
         return $output;
     }
-        
-    
+   
+    // Return thumbnail
+    function getThumbnail($url) {
+        $id = getID($url);
+        $thumbnail = "http://img.youtube.com/vi/$id/maxresdefault.jpg";
+        return $thumbnail;
+    }
+
     // Return match itag index
     function foritag($itag, $array) {
         foreach ($array as $index => $val) {
@@ -49,7 +62,7 @@
     }
 
     // Return value from parameter inside of an array matching itag
-    function getValue($itag, $array, $parameter){
+    function getValue($itag, $array, $parameter) {
         $index = foritag($itag, $array);
         return $array[$index][$parameter];
     }

@@ -72,7 +72,7 @@
     if (isset($_GET["URL"]) && ((strpos($_GET["URL"], 'youtube.com') !== false) || (strpos($_GET["URL"], 'youtu.be') !== false))) {
       $url = $_GET["URL"];
       $title = "TODO";
-      $thumbnail = "TODO";
+      $thumbnail = getThumbnail($url);
       $video_array = getVideoInfo($url);
       e('              <a href="'.$url.'" target="_blank">'."\n");
       e('                <img class="img-fluid d-inline" src="'.$thumbnail.'" alt="'.$title.'" title="'.$title.'" />'."\n");
