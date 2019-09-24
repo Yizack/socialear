@@ -31,7 +31,7 @@
         return $id;
     }
 
-    // Return thumbnail
+    // Return video info array
     function getVideoInfo($url) {
         $id = getID($url);
         $data = file_get_contents("http://youtube.com/get_video_info?video_id=$id");
