@@ -51,6 +51,13 @@
         return $thumbnail;
     }
 
+    function getTitle($url) {
+        $id = getID($url);
+        $json = file_get_contents("http://www.youtube.com/oembed?url=http://www.youtube.com/watch?v=$id&format=json"); //get JSON video details
+        $details = json_decode($json, true); //parse the JSON into an array
+        return $details['title']; //return the video title
+    }
+
     // Return match itag index
     function foritag($itag, $array) {
         foreach ($array as $index => $val) {
