@@ -91,47 +91,56 @@
           case "160":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            e(writeOption($size, $video, $download));
+            $popover = $video_only;
+            e(writeOption($size, $video, $download, $popover));
             break;
           case "133": 
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            e(writeOption($size, $video, $download));
+            $popover = $video_only;
+            e(writeOption($size, $video, $download, $popover));
             break;
           case "134":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            e(writeOption($size, $video, $download));
+            $popover = $video_only;
+            e(writeOption($size, $video, $download, $popover));
             break;
           case "135":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            e(writeOption($size, $video, $download));
+            $popover = $video_only;
+            e(writeOption($size, $video, $download, $popover));
             break;
           case "298":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            e(writeOption($size, $video, $download));
+            $popover = $video_only;
+            e(writeOption($size, $video, $download, $popover));
             break;
           case "136":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            e(writeOption($size, $video, $download));
+            $popover = $video_only;
+            e(writeOption($size, $video, $download, $popover));
             break;
           case "299":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            e(writeOption($size, $video, $download));
+            $popover = $video_only;
+            e(writeOption($size, $video, $download, $popover));
             break;
           case "137":
             $video = $video_array[$x]['url'];
             $size = $video_array[$x]['quality_label'];
-            e(writeOption($size, $video, $download));
+            $popover = $video_only;
+            e(writeOption($size, $video, $download, $popover));
             break;
           case "140":
-            $video = $video_array[$x]['url'];
+            $audio = $video_array[$x]['url'];
             $size = 'Audio';
-            e(writeOption($size, $video, $download));
+            $popover = $audio_only;
+            e(writeOption($size, $audio, $download, $popover));
             break;
         }
       }
@@ -175,11 +184,16 @@
     <script src="/js/jquery-3.4.1.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/cc91b92ca8.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();   
+      });
+    </script>
   </body>
 </html>
 <?php
-  function writeOption($size, $video, $download) {
-    $htmlstring = '				<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace like-pre"><script>document.write(("'.$size.'").padStart(7))</script></span></div><div class="input-group-append"><a class="btn btn-primary" href="'.$video.'" role="button"><i class="fas fa-download fa-fw"></i> '.$download.'</a></div></div>';
-      return "\n".''.$htmlstring;
+  function writeOption($size, $video, $download, $popover) {
+    $htmlstring = '				<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace like-pre"><script>document.write(("'.$size.'").padStart(7))</script></span></div><div class="input-group-append"><a class="btn btn-primary" href="'.$video.'" role="button" data-toggle="tooltip" data-placement="right" title="'.$popover.'"><i class="fas fa-download fa-fw"></i> '.$download.'</a></div></div>';
+    return "\n".''.$htmlstring;
   }
 ?>

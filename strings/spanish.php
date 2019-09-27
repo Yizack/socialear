@@ -48,17 +48,19 @@
 
     $merge_how = "Cómo usar $merge";
 
-    $merge_qb = bold(quotation($merge));
-    $video_only = bold(quotation("solo video"));
-    $audio_only = bold(quotation("solo audio"));
+    $merge_bq = bold(quotation($merge));
+    $video_only = "solo video";
+    $audio_only = "solo audio";
+    $video_only_bq = bold(quotation("solo video"));
+    $audio_only_bq = bold(quotation("solo audio"));
     $right_click = bold(quotation("Clic derecho"));
     $save_as = bold(quotation("Guardar enlace como...."));
 
     $step = "Paso";
-    $merge_step1 = "Haber descargado un archivo de $video_only y uno de $audio_only en";
-    $merge_step2 = "Elige tu archivo de $video_only.";
-    $merge_step3 = "Elige tu archivo de $audio_only.";
-    $merge_step4 = "Clic en el botón $merge_qb y espera que tus archivos se suban.";
+    $merge_step1 = "Haber descargado un archivo de $video_only_bq y uno de $audio_only_bq en";
+    $merge_step2 = "Elige tu archivo de $video_only_bq.";
+    $merge_step3 = "Elige tu archivo de $audio_only_bq.";
+    $merge_step4 = "Clic en el botón $merge_bq y espera que tus archivos se suban.";
     $merge_step5 = "Aparecerá temporalmente un enlace a tu video unido con un identificador único.";
     $merge_step6 = "Clic en tu enlace y descargar, o $right_click en tu enlace y luego clic en $save_as para descargar.";
     $note = "Nota";
