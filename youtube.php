@@ -56,14 +56,14 @@
     </div>
     <section class="video_download text-white">
       <div class="container mb-5">
-        <div class="row align-items-center">
+        <div class="row align-items-center pt-5">
           <div class="col-lg-12 order-lg-1">
-            <div class="alert alert-warning alert-dismissible mt-5">
+            <div class="alert alert-warning alert-dismissible">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
               <i class="fas fa-exclamation-circle fa-fw"></i> <strong>Notification:</strong> Currently copyrighted videos can't be downloaded, we are working to make it possible in the future.
             </div>
           </div>
-          <div class="col-12 order-lg-2">
+          <div class="col-lg-12 order-lg-2">
             <div class="alert alert-secondary alert-dismissible">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
               <i class="fas fa-exclamation-circle fa-fw"></i> Socialear can only extract the video and audio sources separately from youtube, to merge them, download your files and use the <a href="/merge" target="_blank">"<strong>Merge</strong>"</a> tool.
@@ -87,7 +87,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 order-lg-4">
+          <div class="col-lg-6 order-lg-4 pt-3">
             <div class="mx-auto">
               <p class="text-left" id="video_title"><?php e($title) ?></p>
               <div class="mx-auto" id="video_options">
