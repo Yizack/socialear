@@ -55,7 +55,7 @@
       </nav>
     </div>
     <section class="video_download text-white">
-      <div class="container">
+      <div class="container mb-5">
         <div class="row align-items-center">
           <div class="col-lg-12 order-lg-1">
             <div class="alert alert-warning alert-dismissible mt-5">
@@ -88,7 +88,7 @@
             </div>
           </div>
           <div class="col-lg-6 order-lg-4">
-            <div class="mx-auto p-5">
+            <div class="mx-auto">
               <p class="text-left" id="video_title"><?php e($title) ?></p>
               <div class="mx-auto" id="video_options">
                 <p class="text-left"><?php e($options) ?>:</p><?php
