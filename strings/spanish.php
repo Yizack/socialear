@@ -21,7 +21,7 @@
     $video_facebook = "Tu video de Facebook";
     $video_twitter = "Tu video de Twitter";
     $video_instagram = "Tu video de Instagram";
-    $video_instagram = "Tu video de Youtube";
+    $video_youtube = "Tu video de Youtube";
 
     $more_facebook = "Descargar más videos de Facebook";
     $more_twitter = "Descargar más videos de Twitter";
