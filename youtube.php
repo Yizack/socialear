@@ -63,7 +63,13 @@
               <i class="fas fa-exclamation-circle fa-fw"></i> <strong>Notification:</strong> Currently copyrighted videos can't be downloaded, we are working to make it possible in the future.
             </div>
           </div>
-          <div class="col-lg-6 order-lg-2">
+          <div class="col-12 order-lg-2">
+            <div class="alert alert-secondary alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <i class="fas fa-exclamation-circle fa-fw"></i> Socialear can only extract the video and audio sources separately from youtube, to merge them, download your files and use the <a href="/merge" target="_blank">"<strong>Merge</strong>"</a> tool.
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-3">
             <div class="text-center">
               <h2><?php e($video_youtube) ?></h2>
               <div id="video_image">
@@ -81,8 +87,8 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 order-lg-3">
-            <div class="mx-auto p-3">
+          <div class="col-lg-6 order-lg-4">
+            <div class="mx-auto p-5">
               <p class="text-left" id="video_title"><?php e($title) ?></p>
               <div class="mx-auto" id="video_options">
                 <p class="text-left"><?php e($options) ?>:</p><?php
@@ -148,11 +154,6 @@
     }
   }?>
               </div>
-            </div>
-          </div>
-          <div class="col-12 order-lg-4">
-            <div class="alert alert-secondary alert-dismissible">
-              <i class="fas fa-exclamation-circle fa-fw"></i> Socialear can only extract the video and audio sources separately from youtube, to merge them download your files and use the <a href="/merge" target="_blank">"<strong>Merge</strong>"</a> tool.
             </div>
           </div>
         </div>
