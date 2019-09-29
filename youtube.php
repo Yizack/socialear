@@ -66,7 +66,7 @@
           <div class="col-lg-12 order-lg-2">
             <div class="alert alert-secondary alert-dismissible">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
-              <i class="fas fa-exclamation-circle fa-fw"></i> Socialear can only extract the video and audio sources separately from youtube, to merge them, download your files and use the <a href="/merge" target="_blank">"<strong>Merge</strong>"</a> tool.
+              <i class="fas fa-info-circle fa-fw"></i> Socialear can only extract the video and audio sources separately from youtube, to merge them, download your files and use the <a href="/merge" target="_blank">"<strong>Merge</strong>"</a> tool.
             </div>
           </div>
           <div class="col-lg-6 order-lg-3">
