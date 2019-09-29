@@ -56,7 +56,7 @@
     </div>
     <section class="video_download text-white">
       <div class="container mb-5">
-        <div class="row align-items-center pt-5">
+        <div class="row align-items-center py-5">
           <div class="col-lg-12 order-lg-1">
             <div class="alert alert-warning alert-dismissible">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
