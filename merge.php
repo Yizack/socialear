@@ -91,7 +91,7 @@
                 }
 ?>
               <h2><?php e($merge_choose); ?></h2>
-              <form action="http://merge.yizack.com/" method="POST" enctype="multipart/form-data">
+              <form action="/merge-script" method="POST" enctype="multipart/form-data">
                 <p><?php e(ucfirst($video)); ?>:</p>
                 <div class="custom-file mb-3">
                   <input type="file" class="custom-file-input" id="input_video" name="input_video" accept="video/mp4" required>
