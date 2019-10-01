@@ -1,17 +1,25 @@
 <?php
+require('vendor/autoload.php');
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 	if (isset($_GET["token"])) {
+		$s3 = new Aws\S3\S3Client([
+			'version'  => 'latest',
+			'region'   => 'us-east-2',
+			'credentials' => [
+				'key'    => getenv('AWS_KEY'),
+				'secret' => getenv('AWS_SECRET')
+			]
+		]);
+		$bucket = getenv('AWS_SECRET');
 		$token = $_GET["token"];
-		$user = getenv('FTP_USER');
-		$password = getenv('FTP_PASSWORD');
-		$host = getenv('FTP_HOST');
-		$port = getenv('FTP_PORT');
-		$path = getenv('FTP_PATH');
-		$ftp = "ftp://$user:$password@$host:$port/$path";
-
-		$video = "$ftp/video-$token.mp4";
-		$audio = "$ftp/video-$token.mp3";
-		
+		$video  = $s3->getObject([
+			'Bucket' => $bucket,
+			'Key'    => "video-$token.mp4"
+		]);
+		$audio  = $s3->getObject([
+			'Bucket' => $bucket,
+			'Key'    => "video-$token.mp3"
+		]);
 		$cmd = "ffmpeg -y -i $video -i $audio -c copy -map 0:v -map 1:a output/video-$token.mp4";
 		system($cmd);
 	}
