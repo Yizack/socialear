@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 				'secret' => getenv('AWS_SECRET')
 			]
 		]);
-		$bucket = getenv('AWS_SECRET');
+		$bucket = getenv('AWS_BUCKET');
 		$token = $_GET["token"];
 		$video  = $s3->getObject([
 			'Bucket' => $bucket,
