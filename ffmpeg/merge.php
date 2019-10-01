@@ -12,14 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 		]);
 		$bucket = getenv('AWS_BUCKET');
 		$token = $_GET["token"];
-		$video  = $s3->getObject([
-			'Bucket' => $bucket,
-			'Key'    => "video-$token.mp4"
-		]);
-		$audio  = $s3->getObject([
-			'Bucket' => $bucket,
-			'Key'    => "video-$token.mp3"
-		]);
+		$aws = "http://s3.us-east-2.amazonaws.com";
+		$video  = "$aws/$bucket/video-$token.mp4";
+		$audio  = "$aws/$bucket/video-$token.mp3";
 		$cmd = "ffmpeg -y -i $video -i $audio -c copy -map 0:v -map 1:a output/video-$token.mp4";
 		system($cmd);
 	}
