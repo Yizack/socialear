@@ -1,5 +1,5 @@
 <?php
-require('vendor/autoload.php');
+require('../vendor/autoload.php');
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 	if (isset($_GET["token"])) {
 		$s3 = new Aws\S3\S3Client([
