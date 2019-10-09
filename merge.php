@@ -29,11 +29,11 @@
   }
 ?>
 <!DOCTYPE html>
-<html lang="<?php e($code) ?>">
+<html lang="<?= $code; ?>">
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
-    <title><?php e($sitename) ?></title>
+    <title><?= $sitename; ?></title>
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"/>
@@ -45,7 +45,7 @@
         <a class="navbar-brand" href="/">Socialear <span class="badge badge-secondary">Beta</span></a>
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php e($language) ?>: <?php e("$flag ".strtoupper($code)) ?></a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $language; ?>: <?= "$flag ".strtoupper($code); ?></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="<?php replace_lang("en", isset($_GET["lang"])); ?>"><i class="em-svg em-us"></i> English</a>
               <a class="dropdown-item" href="<?php replace_lang("es", isset($_GET["lang"])); ?>"><i class="em-svg em-es"></i> Español</a>
@@ -63,7 +63,7 @@
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto mt-5">
-            <h1 class="mb-5"><?php e($merge_title); ?></h1>
+            <h1 class="mb-5"><?= $merge_title; ?></h1>
           </div>
             <div class="col-md-10 col-lg-8 col-xl-7 mx-auto text-left">
 <?php
@@ -90,20 +90,20 @@
                   }
                 }
 ?>
-              <h2><?php e($merge_choose); ?></h2>
+              <h2><?= $merge_choose; ?></h2>
               <form action="http://merge.yizack.com/" method="POST" enctype="multipart/form-data">
-                <p><?php e(ucfirst($video)); ?>:</p>
+                <p><?= ucfirst($video); ?>:</p>
                 <div class="custom-file mb-3">
                   <input type="file" class="custom-file-input" id="input_video" name="input_video" accept="video/mp4" required>
-                  <label class="custom-file-label" for="input_video" ><?php e($merge_choose_video); ?></label>
+                  <label class="custom-file-label" for="input_video" ><?= $merge_choose_video; ?></label>
                 </div>
                 <p><?php e(ucfirst($audio)); ?>:</p>
                 <div class="custom-file mb-3">
                   <input type="file" class="custom-file-input" id="input_audio" name="input_audio" accept="audio/mp3, audio/x-m4a" required>
-                  <label class="custom-file-label" for="input_audio"><?php e($merge_choose_audio); ?></label>
+                  <label class="custom-file-label" for="input_audio"><?= $merge_choose_audio; ?></label>
                 </div>
                 <div class="mt-3 mb-5">
-                  <button class="btn btn-success btn-block" id="submit" name="submit" type="submit" onclick="loading();"><?php e($merge); ?></button>
+                  <button class="btn btn-success btn-block" id="submit" name="submit" type="submit" onclick="loading();"><?= $merge; ?></button>
                 </div>
               </form>
             </div>
@@ -117,19 +117,19 @@
           <h3><?php e($merge_how); ?></h3>
         </div>
         <div class="text-left text-dark">
-          <h3><small><?php e($step); ?> 1</small></h3>
-          <p><?php e($merge_step1); ?> <a href="/youtube" target="_blank">https://socialear.yizack.com/youtube</a>.</p>
-          <h3><small><?php e($step); ?> 2</small></h3>
-          <p><?php e($merge_step2); ?></p>
-          <h3><small><?php e($step); ?> 3</small></h3>
-          <p><?php e($merge_step3); ?></p>
-          <h3><small><?php e($step); ?> 4</small></h3>
-          <p><?php e($merge_step4); ?></p>
-          <h3><small><?php e($step); ?> 5</small></h3>
-          <p><?php e($merge_step5); ?></p>
-          <p><span class="badge badge-secondary"><?php e($note); ?> 1:</span> <?php e($merge_note1); ?></p>
-          <h3><small><?php e($step); ?> 6</small></h3>
-          <p><?php e($merge_step6); ?></p>
+          <h3><small><?= $step; ?> 1</small></h3>
+          <p><?= $merge_step1; ?> <a href="/youtube" target="_blank">https://socialear.yizack.com/youtube</a>.</p>
+          <h3><small><?= $step; ?> 2</small></h3>
+          <p><?= $merge_step2; ?></p>
+          <h3><small><?= $step; ?> 3</small></h3>
+          <p><?= $merge_step3; ?></p>
+          <h3><small><?= $step; ?> 4</small></h3>
+          <p><?= $merge_step4; ?></p>
+          <h3><small><?= $step; ?> 5</small></h3>
+          <p><?= $merge_step5; ?></p>
+          <p><span class="badge badge-secondary"><?= $note; ?> 1:</span> <?= $merge_note1; ?></p>
+          <h3><small><?= $step; ?> 6</small></h3>
+          <p><?= $merge_step6; ?></p>
         </div>
       </div>
     </section>
@@ -138,15 +138,15 @@
         <div class="row">
           <div class="col-lg-6 my-auto h-100 text-center text-lg-left">
             <ul class="list-inline mb-2">
-              <li class="list-inline-item"><a href="#"><?php e($about) ?></a></li>
+              <li class="list-inline-item"><a href="#"><?= $about; ?></a></li>
               <li class="list-inline-item"><span>⋅</span></li>
-              <li class="list-inline-item"><a href="#"><?php e($contact) ?></a></li>
+              <li class="list-inline-item"><a href="#"><?= $contact; ?></a></li>
               <li class="list-inline-item"><span>⋅</span></li>
-              <li class="list-inline-item"><a href="#"><?php e($terms) ?></a></li>
+              <li class="list-inline-item"><a href="#"><?= $terms; ?></a></li>
               <li class="list-inline-item"><span>⋅</span></li>
-              <li class="list-inline-item"><a href="#"><?php e($privacy) ?></a></li>
+              <li class="list-inline-item"><a href="#"><?= $privacy; ?></a></li>
             </ul>
-            <p class="text-muted small mb-4 mb-lg-0">© <?php e($sitename) ?> 2019. <?php e($copyright) ?>.</p>
+            <p class="text-muted small mb-4 mb-lg-0">© <?= $sitename; ?> 2019. <?= $copyright; ?>.</p>
           </div>
           <div class="col-lg-6 my-auto h-100 text-center text-lg-right">
             <ul class="list-inline mb-0">
@@ -168,7 +168,7 @@
       });
       function loading(){
         if($('#input_video').val() != false && $('#input_audio').val() != false)
-          $("#submit").html('<span class="spinner-border spinner-border-sm"></span> <?php e($uploading) ?>...');
+          $("#submit").html('<span class="spinner-border spinner-border-sm"></span> <?= $uploading; ?>...');
       }
     </script>
   </body>
