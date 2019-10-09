@@ -109,34 +109,34 @@
     if (isset($_GET["URL"]) && strpos($_GET["URL"], 'facebook.com') !== false) {
       $url = $_GET["URL"];
 ?>
-      <script>
-        var url = "<?= $url ?>";
-        $.get("https://cors-anywhere.herokuapp.com/" + url, function(data) {
-          var thumbnail;
-          var title = $(data).filter('meta[property="og:title"]').attr("content");
-          var video_hd = facebookURL(data, "hd_src:",",sd_src:", 1, 1);
-          var video_sd = $(data).filter('meta[property="og:video"]').attr("content");
-          $("#video_title").append(title);
-      
-          if(video_hd){
-            thumbnail = facebookURL(data, "_4lpf", "/></div>", 2, 7).replace(/amp;/g, "");
-            $("#video_image").append('<a href="' + url + '" target="_blank"><img class="img-fluid d-inline" src="'+ thumbnail +'" alt="' + title + '" title="' + title + '" /></a>');      
-            $("#video_options").append('<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace"><?= $sd ?></span></div><div class="input-group-append"><a class="btn btn-primary" href="'+ video_sd + '" role="button"><i class="fas fa-download fa-fw"></i><?= $download ?></a></div></div>');
-            $("#video_options").append('<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace"><?= $hd ?></span></div><div class="input-group-append"><a class="btn btn-primary" href="'+ video_hd + '" role="button"><i class="fas fa-download fa-fw"></i><?= $download ?></a></div></div>');
-          }
-          else {
-            thumbnail = $(data).filter('meta[property="twitter:image"]').attr("content");
-            $("#video_image").append('<a href="' + url + '" target="_blank"><img class="img-fluid d-inline" src="'+ thumbnail +'" alt="' + title + '" title="' + title + '" /></a>');
-            $("#video_options").append('<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text" text-monospace><?= $sd ?></span></div><div class="input-group-append"><a class="btn btn-primary" href="'+ video_sd + '" role="button"><i class="fas fa-download fa-fw"></i><?= $download ?></a></div></div>');
-          }
-        });
-        function facebookURL(data, antes, despues, n1, n2) {
-          var before = data.substring(data.indexOf(antes));
-          var after = before.substring(before.indexOf(despues)-n1,0);
-          var url = after.substring(after.indexOf('"')+n2);
-          return url;
+    <script>
+      var url = "<?= $url ?>";
+      $.get("https://cors-anywhere.herokuapp.com/" + url, function(data) {
+        var thumbnail;
+        var title = $(data).filter('meta[property="og:title"]').attr("content");
+        var video_hd = facebookURL(data, "hd_src:",",sd_src:", 1, 1);
+        var video_sd = $(data).filter('meta[property="og:video"]').attr("content");
+        $("#video_title").append(title);
+    
+        if(video_hd){
+          thumbnail = facebookURL(data, "_4lpf", "/></div>", 2, 7).replace(/amp;/g, "");
+          $("#video_image").append('<a href="' + url + '" target="_blank"><img class="img-fluid d-inline" src="'+ thumbnail +'" alt="' + title + '" title="' + title + '" /></a>');      
+          $("#video_options").append('<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace"><?= $sd ?></span></div><div class="input-group-append"><a class="btn btn-primary" href="'+ video_sd + '" role="button"><i class="fas fa-download fa-fw"></i><?= $download ?></a></div></div>');
+          $("#video_options").append('<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace"><?= $hd ?></span></div><div class="input-group-append"><a class="btn btn-primary" href="'+ video_hd + '" role="button"><i class="fas fa-download fa-fw"></i><?= $download ?></a></div></div>');
         }
-      </script>
+        else {
+          thumbnail = $(data).filter('meta[property="twitter:image"]').attr("content");
+          $("#video_image").append('<a href="' + url + '" target="_blank"><img class="img-fluid d-inline" src="'+ thumbnail +'" alt="' + title + '" title="' + title + '" /></a>');
+          $("#video_options").append('<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text" text-monospace><?= $sd ?></span></div><div class="input-group-append"><a class="btn btn-primary" href="'+ video_sd + '" role="button"><i class="fas fa-download fa-fw"></i><?= $download ?></a></div></div>');
+        }
+      });
+      function facebookURL(data, antes, despues, n1, n2) {
+        var before = data.substring(data.indexOf(antes));
+        var after = before.substring(before.indexOf(despues)-n1,0);
+        var url = after.substring(after.indexOf('"')+n2);
+        return url;
+      }
+    </script>
 <?php
       }
     }
