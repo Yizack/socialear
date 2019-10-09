@@ -19,11 +19,11 @@
   }
 ?>
 <!DOCTYPE html>
-<html lang="<?php e($code) ?>">
+<html lang="<?= $code; ?>">
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
-    <title><?php e($sitename) ?></title>
+    <title><?= $sitename; ?></title>
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"/>
     <link rel="stylesheet" href="https://afeld.github.io/emoji-css/emoji.css"/> <!-- https://afeld.github.io/emoji-css/ -->
@@ -39,10 +39,10 @@
   <body class="bg-light">
     <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
       <div class="container">
-        <a class="navbar-brand" href="#"><?php e($sitename) ?> <span class="badge badge-secondary">Beta</span></a>
+        <a class="navbar-brand" href="#"><?= $sitename; ?> <span class="badge badge-secondary">Beta</span></a>
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php e($language) ?>: <?php e("$flag ".strtoupper($code)) ?></a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $language; ?>: <?= "$flag ".strtoupper($code); ?></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="/en"><i class="em-svg em-us"></i> English</a>
               <a class="dropdown-item" href="/es"><i class="em-svg em-es"></i> Español</a>
@@ -60,7 +60,7 @@
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5"><?php e($sitename) ?></h1>
+            <h1 class="mb-5"><?= $sitename; ?></h1>
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
             <form action="<?php if ($code !== "en"){e("/".$code);} ?>/instagram" method="get">
@@ -80,7 +80,7 @@
                   </div>
                 </div>
                 <div class="col-12 col-md-3">
-                  <button class="btn btn-success btn-block" type="submit"><?php e($download) ?></button>
+                  <button class="btn btn-success btn-block" type="submit"><?= $download; ?></button>
                 </div>
               </div>
             </form>
@@ -92,7 +92,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-        <p><?php e($associated) ?></p>
+        <p><?= $associated; ?></p>
       </div>
     </div>
     </div>
@@ -127,15 +127,15 @@
         <div class="row">
           <div class="col-lg-6 my-auto h-100 text-center text-lg-left">
             <ul class="list-inline mb-2">
-              <li class="list-inline-item"><a href="#"><?php e($about) ?></a></li>
+              <li class="list-inline-item"><a href="#"><?= $about; ?></a></li>
               <li class="list-inline-item"><span>⋅</span></li>
-              <li class="list-inline-item"><a href="#"><?php e($contact) ?></a></li>
+              <li class="list-inline-item"><a href="#"><?= $contact; ?></a></li>
               <li class="list-inline-item"><span>⋅</span></li>
-              <li class="list-inline-item"><a href="#"><?php e($terms) ?></a></li>
+              <li class="list-inline-item"><a href="#"><?= $terms; ?></a></li>
               <li class="list-inline-item"><span>⋅</span></li>
-              <li class="list-inline-item"><a href="#"><?php e($privacy) ?></a></li>
+              <li class="list-inline-item"><a href="#"><?= $privacy; ?></a></li>
             </ul>
-            <p class="text-muted small mb-4 mb-lg-0">© <?php e($sitename) ?> 2019. <?php e($copyright) ?>.</p>
+            <p class="text-muted small mb-4 mb-lg-0">© <?= $sitename; ?> 2019. <?= $copyright; ?>.</p>
           </div>
           <div class="col-lg-6 my-auto h-100 text-center text-lg-right">
             <ul class="list-inline mb-0">
