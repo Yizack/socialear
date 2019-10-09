@@ -13,7 +13,7 @@ function replace_lang($code, $isset_lang){
             $var = preg_split("#/#", $uri); 
             $var[1] = $code;
     }
-    e(join("/",$var));
+    return join("/",$var);
 }
 
 // SHORT echo FUNCTION
