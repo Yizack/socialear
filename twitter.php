@@ -96,17 +96,17 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
               <div class="mx-auto" id="video_options">
                 <p class="text-left"><?= $options; ?>:</p>
 <?php
-for ($x = 0; $x < count($video_array); $x++) {
-  $video = $video_array[$x]['url'];
-  $last = explode("/", $video, substr_count($video, "/"));
-  $txt = trim(end($last));
-  $size[$x] = strstr($txt, '/', true);
+    for ($x = 0; $x < count($video_array); $x++) {
+      $video = $video_array[$x]['url'];
+      $last = explode("/", $video, substr_count($video, "/"));
+      $txt = trim(end($last));
+      $size[$x] = strstr($txt, '/', true);
 ?>
                 <div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace like-pre"><script>document.write(("<?= $size[$x] ?>").padStart(9))</script></span></div><div class="input-group-append"><a class="btn btn-primary" href="<?= $video ?>" role="button"><i class="fas fa-download fa-fw"></i><?= $download ?></a></div></div>
 <?php
-  }
     }
   }
+}
 ?>
               </div>
             </div>
