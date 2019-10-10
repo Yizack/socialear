@@ -102,7 +102,7 @@ for ($x = 0; $x < count($video_array); $x++) {
   $txt = trim(end($last));
   $size[$x] = strstr($txt, '/', true);
 ?>
-                <div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace like-pre"><script>document.write(("'.$size[$x].'").padStart(9))</script></span></div><div class="input-group-append"><a class="btn btn-primary" href="'.$video.'" role="button"><i class="fas fa-download fa-fw"></i> '.$download.'</a></div></div>';
+                <div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace like-pre"><script>document.write(("<?= $size[$x] ?>").padStart(9))</script></span></div><div class="input-group-append"><a class="btn btn-primary" href="<?= $video ?>" role="button"><i class="fas fa-download fa-fw"></i><?= $download ?></a></div></div>
 <?php
   }
     }
