@@ -105,9 +105,9 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/cc91b92ca8.js"></script>
 <?php
-  if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    if (isset($_GET["URL"]) && strpos($_GET["URL"], 'facebook.com') !== false) {
-      $url = $_GET["URL"];
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+  if (isset($_GET["URL"]) && strpos($_GET["URL"], 'facebook.com') !== false) {
+    $url = $_GET["URL"];
 ?>
     <script>
       var url = "<?= $url ?>";
@@ -138,8 +138,8 @@
       }
     </script>
 <?php
-      }
-    }
+  }
+}
 ?>
   </body>
 </html>

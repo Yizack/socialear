@@ -74,16 +74,17 @@
               <h2><?= $video_youtube; ?></h2>
               <div id="video_image">
 <?php
-  if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    if (isset($_GET["URL"]) && ((strpos($_GET["URL"], 'youtube.com') !== false) || (strpos($_GET["URL"], 'youtu.be') !== false))) {
-      $url = $_GET["URL"];
-      $title = getTitle($url);
-      $thumbnail = getThumbnail($url);
-      $video_array = getVideoInfo($url);
-      e('              <a href="'.$url.'" target="_blank">'."\n");
-      e('                <img class="img-fluid d-inline" src="'.$thumbnail.'" alt="'.$title.'" title="'.$title.'" />'."\n");
-      e('              </a>'."\n");
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+  if (isset($_GET["URL"]) && ((strpos($_GET["URL"], 'youtube.com') !== false) || (strpos($_GET["URL"], 'youtu.be') !== false))) {
+    $url = $_GET["URL"];
+    $title = getTitle($url);
+    $thumbnail = getThumbnail($url);
+    $video_array = getVideoInfo($url);
 ?>
+
+                <a href="<?= $url ?>" target="_blank">
+                  <img class="img-fluid d-inline" src="<?= $thumbnail ?>" alt="<?= $title ?>" title="<? $title ?>" />
+                </a>
               </div>
             </div>
           </div>
@@ -91,68 +92,69 @@
             <div class="mx-auto">
               <p class="text-left" id="video_title"><?= $title; ?></p>
               <div class="mx-auto" id="video_options">
-                <p class="text-left"><?= $options; ?>:</p><?php
-      foreach ($video_array as $x => $val) {
-        switch($val['itag']){
-          case "160":
-            $video = $video_array[$x]['url'];
-            $size = $video_array[$x]['quality_label'];
-            $tooltip = $video_only;
-            e(writeOption($size, $video, $download, $tooltip));
-            break;
-          case "133": 
-            $video = $video_array[$x]['url'];
-            $size = $video_array[$x]['quality_label'];
-            $tooltip = $video_only;
-            e(writeOption($size, $video, $download, $tooltip));
-            break;
-          case "134":
-            $video = $video_array[$x]['url'];
-            $size = $video_array[$x]['quality_label'];
-            $tooltip = $video_only;
-            e(writeOption($size, $video, $download, $tooltip));
-            break;
-          case "135":
-            $video = $video_array[$x]['url'];
-            $size = $video_array[$x]['quality_label'];
-            $tooltip = $video_only;
-            e(writeOption($size, $video, $download, $tooltip));
-            break;
-          case "298":
-            $video = $video_array[$x]['url'];
-            $size = $video_array[$x]['quality_label'];
-            $tooltip = $video_only;
-            e(writeOption($size, $video, $download, $tooltip));
-            break;
-          case "136":
-            $video = $video_array[$x]['url'];
-            $size = $video_array[$x]['quality_label'];
-            $tooltip = $video_only;
-            e(writeOption($size, $video, $download, $tooltip));
-            break;
-          case "299":
-            $video = $video_array[$x]['url'];
-            $size = $video_array[$x]['quality_label'];
-            $tooltip = $video_only;
-            e(writeOption($size, $video, $download, $tooltip));
-            break;
-          case "137":
-            $video = $video_array[$x]['url'];
-            $size = $video_array[$x]['quality_label'];
-            $tooltip = $video_only;
-            e(writeOption($size, $video, $download, $tooltip));
-            break;
-          case "140":
-            $audio = $video_array[$x]['url'];
-            $size = 'Audio';
-            $tooltip = $audio_only;
-            e(writeOption($size, $audio, $download, $tooltip));
-            break;
-        }
+                <p class="text-left"><?= $options; ?>:</p>
+<?php
+    foreach ($video_array as $x => $val) {
+      switch($val['itag']){
+        case "160":
+          $video = $video_array[$x]['url'];
+          $size = $video_array[$x]['quality_label'];
+          $tooltip = $video_only;
+          writeOption($size, $video, $download, $tooltip);
+          break;
+        case "133": 
+          $video = $video_array[$x]['url'];
+          $size = $video_array[$x]['quality_label'];
+          $tooltip = $video_only;
+          writeOption($size, $video, $download, $tooltip);
+          break;
+        case "134":
+          $video = $video_array[$x]['url'];
+          $size = $video_array[$x]['quality_label'];
+          $tooltip = $video_only;
+          writeOption($size, $video, $download, $tooltip);
+          break;
+        case "135":
+          $video = $video_array[$x]['url'];
+          $size = $video_array[$x]['quality_label'];
+          $tooltip = $video_only;
+          writeOption($size, $video, $download, $tooltip);
+          break;
+        case "298":
+          $video = $video_array[$x]['url'];
+          $size = $video_array[$x]['quality_label'];
+          $tooltip = $video_only;
+          writeOption($size, $video, $download, $tooltip);
+          break;
+        case "136":
+          $video = $video_array[$x]['url'];
+          $size = $video_array[$x]['quality_label'];
+          $tooltip = $video_only;
+          writeOption($size, $video, $download, $tooltip);
+          break;
+        case "299":
+          $video = $video_array[$x]['url'];
+          $size = $video_array[$x]['quality_label'];
+          $tooltip = $video_only;
+          writeOption($size, $video, $download, $tooltip);
+          break;
+        case "137":
+          $video = $video_array[$x]['url'];
+          $size = $video_array[$x]['quality_label'];
+          $tooltip = $video_only;
+          writeOption($size, $video, $download, $tooltip);
+          break;
+        case "140":
+          $audio = $video_array[$x]['url'];
+          $size = 'Audio';
+          $tooltip = $audio_only;
+          writeOption($size, $audio, $download, $tooltip);
+          break;
       }
-    e("\n");
     }
-  }?>
+  }
+}
+?>
               </div>
             </div>
           </div>
@@ -199,8 +201,9 @@
   </body>
 </html>
 <?php
-  function writeOption($size, $video, $download, $tooltip) {
-    $htmlstring = '				<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace like-pre"><script>document.write(("'.$size.'").padStart(7))</script></span></div><div class="input-group-append"><a class="btn btn-primary" href="'.$video.'" role="button" data-toggle="tooltip" data-placement="right" title="'.$tooltip.'"><i class="fas fa-download fa-fw"></i> '.$download.'</a></div></div>';
-    return "\n".''.$htmlstring;
-  }
+function writeOption($size, $video, $download, $tooltip) {
+?>
+                <div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace like-pre"><script>document.write(("<?= $size ?>").padStart(7))</script></span></div><div class="input-group-append"><a class="btn btn-primary" href="<?= $video ?>" role="button" data-toggle="tooltip" data-placement="right" title="<?= $tooltip ?>"><i class="fas fa-download fa-fw"></i><?= $download ?></a></div></div>
+<?php
+}
 ?>

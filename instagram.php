@@ -105,22 +105,24 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/cc91b92ca8.js"></script>
 <?php
-  if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    if (isset($_GET["URL"]) && strpos($_GET["URL"], 'instagram.com') !== false) {
-      $url = $_GET["URL"];
-      e('    <script>'."\n");
-      e('      var url = "'.$url.'";'."\n");
-      e('      $.get("https://cors-anywhere.herokuapp.com/" + url, function(data) {'."\n");
-      e('        var thumbnail = $(data).filter(\'meta[property="og:image"]\').attr("content");'."\n");
-      e('        var title = $(data).filter(\'meta[property="og:title"]\').attr("content");'."\n");
-      e('        var video = $(data).filter(\'meta[property="og:video"]\').attr("content");'."\n");
-      e('        $(\'#video_title\').append(title);'."\n");    
-      e('	      $(\'#video_image\').append(\'<a href="\' + url + \'" target="_blank"><img class="img-fluid d-inline" src="\'+ thumbnail +\'" alt="\' + title + \'" title="\' + title + \'" /></a>\');'."\n");      
-      e('        $(\'#video_options\').append(\'<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace">MP4</span></div><div class="input-group-append"><a class="btn btn-primary" href="\'+ video + \'" role="button"><i class="fas fa-download fa-fw"></i> '.$download.'</a></div></div>\');'."\n");
-      e('      });'."\n");
-      e('    </script>'."\n");
-      }
-    }
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+  if (isset($_GET["URL"]) && strpos($_GET["URL"], 'instagram.com') !== false) {
+    $url = $_GET["URL"];
+?>
+    <script>
+      var url = "<?= $url ?>";
+      $.get("https://cors-anywhere.herokuapp.com/" + url, function(data) {
+        var thumbnail = $(data).filter('meta[property="og:image"]').attr("content");
+        var title = $(data).filter('meta[property="og:title"]').attr("content");
+        var video = $(data).filter('meta[property="og:video"]').attr("content");
+        $("#video_title").append(title);
+        $("#video_image").append('<a href="' + url + '" target="_blank"><img class="img-fluid d-inline" src="'+ thumbnail +'" alt="' + title + '" title="' + title + '" /></a>');
+        $("#video_options").append('<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace">MP4</span></div><div class="input-group-append"><a class="btn btn-primary" href="'+ video + '" role="button"><i class="fas fa-download fa-fw"></i><?= $download ?></a></div></div>');
+      });
+    </script>
+<?php
+  }
+}
 ?>
   </body>
 </html>

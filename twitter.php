@@ -72,21 +72,21 @@
               <h2><?= $video_twitter; ?></h2>
               <div id="video_image">
 <?php
-  if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    if (isset($_GET["URL"]) && strpos($_GET["URL"], 'twitter.com') !== false) {
-      $url = $_GET["URL"];
-      $arr_url = explode("/", $url);
-      $tweet_id = end($arr_url); 
-      $tweet = getTweetInfo($connection,$tweet_id);
-      $title = getTweetText($tweet);
-      $title = str_replace("\r", "", $title);
-      $title = str_replace("\n", "", $title);
-      $thumbnail = getTweetImage($tweet);
-      $video_array = getTweetVideo($tweet);
-      e('              <a href="'.$url.'" target="_blank">'."\n");
-      e('                <img class="img-fluid d-inline" src="'.$thumbnail.'" alt="'.$title.'" title="'.$title.'" />'."\n");
-      e('              </a>'."\n");
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+  if (isset($_GET["URL"]) && strpos($_GET["URL"], 'twitter.com') !== false) {
+    $url = $_GET["URL"];
+    $arr_url = explode("/", $url);
+    $tweet_id = end($arr_url); 
+    $tweet = getTweetInfo($connection,$tweet_id);
+    $title = getTweetText($tweet);
+    $title = str_replace("\r", "", $title);
+    $title = str_replace("\n", "", $title);
+    $thumbnail = getTweetImage($tweet);
+    $video_array = getTweetVideo($tweet);
 ?>
+                <a href="<?= $url ?>" target="_blank">
+                  <img class="img-fluid d-inline" src="<?= $thumbnail ?>" alt="<?= $title ?>" title="<?= $title ?>" />
+                </a>
               </div>
             </div>
           </div>
@@ -94,18 +94,20 @@
             <div class="mx-auto p-5">
               <p class="text-left" id="video_title"><?= $title; ?></p>
               <div class="mx-auto" id="video_options">
-                <p class="text-left"><?= $options; ?>:</p><?php
-      for ($x = 0; $x < count($video_array); $x++) {
-      $video = $video_array[$x]['url'];
-      $last = explode("/", $video, substr_count($video, "/"));
-      $txt = trim(end($last));
-      $size[$x] = strstr($txt, '/', true);
-      $htmlstring = '				<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace like-pre"><script>document.write(("'.$size[$x].'").padStart(9))</script></span></div><div class="input-group-append"><a class="btn btn-primary" href="'.$video.'" role="button"><i class="fas fa-download fa-fw"></i> '.$download.'</a></div></div>';
-      e("\n".''.$htmlstring);
-      }
-    e("\n");
+                <p class="text-left"><?= $options; ?>:</p>
+<?php
+for ($x = 0; $x < count($video_array); $x++) {
+  $video = $video_array[$x]['url'];
+  $last = explode("/", $video, substr_count($video, "/"));
+  $txt = trim(end($last));
+  $size[$x] = strstr($txt, '/', true);
+?>
+                <div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace like-pre"><script>document.write(("'.$size[$x].'").padStart(9))</script></span></div><div class="input-group-append"><a class="btn btn-primary" href="'.$video.'" role="button"><i class="fas fa-download fa-fw"></i> '.$download.'</a></div></div>';
+<?php
+  }
     }
-  }?>
+  }
+?>
               </div>
             </div>
           </div>
