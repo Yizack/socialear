@@ -11,6 +11,6 @@
     "require": {
         "abraham/twitteroauth": "^1.0",
         "aws/aws-sdk-php": "^3.112",
-        "voku/simple_html_dom": "^4.7"
+        "paquettg/php-html-parser": "^2.1"
     }
 }

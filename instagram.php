@@ -1,6 +1,7 @@
 <?php
 require("functions/global.php"); // Global functions
-require("vendor/voku/simple_html_dom/src/voku/helper/HtmlDomParser.php");
+require("vendor/autoload.php");
+use PHPHtmlParser\Dom;
 // Language
 if (isset($_GET["lang"])) {
   switch($_GET["lang"]) {
@@ -152,7 +153,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 }
 else {
   if (isset($_POST["code"])) {
-    $data = HtmlDomParser::str_get_html($_POST["code"]);
+    $data = new Dom;
+    $data = load($_POST["code"]);
     $private_url = $data->find('meta[property="og:url"]', 0)->content;
     $thumbnail = $data->find('meta[property="og:image"]', 0)->content;
     $title = $data->find('meta[property="og:title"]', 0)->content;
