@@ -1,6 +1,6 @@
 <?php
 require("functions/global.php"); // Global functions
-require("vendor/autoload.php");
+require("vendor/voku/simple_html_dom/src/voku/helper/HtmlDomParser.php");
 // Language
 if (isset($_GET["lang"])) {
   switch($_GET["lang"]) {
