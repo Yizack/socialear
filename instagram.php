@@ -93,7 +93,7 @@ if (isset($_GET["private"])) {
               <div class="form-row">
                 <div class="col-12 col-md-12 mb-3">
                   <div class="input-group">
-                    <textarea class="form-control" rows="5" id="code" name="code"></textarea>
+                    <textarea class="form-control" rows="5" id="code" name="code" placeholder="Paste html source code"></textarea>
                   </div>
                 </div>
                 <div class="col-12 col-md-3 mx-auto">
