@@ -154,7 +154,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 else {
   if (isset($_POST["code"])) {
     $data = new Dom;
-    $data = load($_POST["code"]);
+    $data->load($_POST["code"]);
     $private_url = $data->find('meta[property="og:url"]', 0)->content;
     $thumbnail = $data->find('meta[property="og:image"]', 0)->content;
     $title = $data->find('meta[property="og:title"]', 0)->content;
