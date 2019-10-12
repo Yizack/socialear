@@ -1,5 +1,6 @@
 <?php
 require("functions/global.php"); // Global functions
+require("vendor/autoload.php");
 // Language
 if (isset($_GET["lang"])) {
   switch($_GET["lang"]) {
