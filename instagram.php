@@ -53,20 +53,20 @@ else {
     <section class="video_download text-white">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-12 order-lg-2">
+          <div class="col-lg-12 order-lg-1">
             <div class="alert alert-secondary alert-dismissible">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
               <i class="fas fa-info-circle fa-fw"></i> If the video is from a private account, <a href="/instagram?private">click here</a> to know how to download it.
             </div>
           </div>
-          <div class="col-lg-6 order-lg-1">
+          <div class="col-lg-6 order-lg-2">
             <div class="text-center p-5">
               <h2><?= $video_instagram; ?></h2>
               <div id="video_image">
               </div>
             </div>
           </div>
-          <div class="col-lg-6 order-lg-2">
+          <div class="col-lg-6 order-lg-3">
             <div class="mx-auto p-5">
               <p class="text-center" id="video_title"></p>
               <div class="mx-auto" id="video_options">
@@ -94,7 +94,7 @@ if (isset($_GET["private"])) {
                     <textarea class="form-control" rows="5" id="code" name="code"></textarea>
                   </div>
                 </div>
-                <div class="col-12 col-md-3">
+                <div class="col-12 col-md-3 mx-auto">
                   <button class="btn btn-success btn-block" type="submit"><?= $download; ?></button>
                 </div>
               </div>
@@ -151,14 +151,18 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 }
 else {
   if (isset($_POST["code"])) {
-    $data = $_POST["code"];
+    $data = new simple_html_dom();
+    $data = load($_POST["code"]);
+    $private_url = $data->find('meta[property="og:url"]', 0)->content;
+    $thumbnail = $data->find('meta[property="og:image"]', 0)->content;
+    $title = $data->find('meta[property="og:title"]', 0)->content;
+    $video = $data->find('meta[property="og:video"]', 0)->content;
 ?>
   <script>
-    var data = "<?= $data ?>";
-    var url = $(data).filter('meta[property="og:url"]').attr("content");
-    var thumbnail = $(data).filter('meta[property="og:image"]').attr("content");
-    var title = $(data).filter('meta[property="og:title"]').attr("content");
-    var video = $(data).filter('meta[property="og:video"]').attr("content");
+    var url = "<?= $private_url ?>";
+    var thumbnail = "<?= $thumbnail ?>";
+    var title = "<?= $title ?>";
+    var video = "<?= $video ?>";
     $("#video_title").append(title);
     $("#video_image").append('<a href="' + url + '" target="_blank"><img class="img-fluid d-inline" src="'+ thumbnail +'" alt="' + title + '" title="' + title + '" /></a>');
     $("#video_options").append('<div class="input-group m-3"><div class="input-group-prepend"><span class="input-group-text text-monospace">MP4</span></div><div class="input-group-append"><a class="btn btn-primary" href="'+ video + '" role="button"><i class="fas fa-download fa-fw"></i><?= $download ?></a></div></div>');
