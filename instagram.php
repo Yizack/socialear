@@ -50,7 +50,7 @@ else {
         </div>
       </nav>
     </div>
-    <section class="video_download text-white">
+    <section class="video_download text-white py-5">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-12 order-lg-1">
@@ -60,14 +60,14 @@ else {
             </div>
           </div>
           <div class="col-lg-6 order-lg-2">
-            <div class="text-center p-5">
+            <div class="text-center">
               <h2><?= $video_instagram; ?></h2>
               <div id="video_image">
               </div>
             </div>
           </div>
           <div class="col-lg-6 order-lg-3">
-            <div class="mx-auto p-5">
+            <div class="mx-auto">
               <p class="text-center" id="video_title"></p>
               <div class="mx-auto" id="video_options">
                 <p class="text-left"><?= $options; ?>:</p>
@@ -151,8 +151,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 }
 else {
   if (isset($_POST["code"])) {
-    $data = new simple_html_dom();
-    $data = load($_POST["code"]);
+    $data = str_get_html($_POST["code"]);
     $private_url = $data->find('meta[property="og:url"]', 0)->content;
     $thumbnail = $data->find('meta[property="og:image"]', 0)->content;
     $title = $data->find('meta[property="og:title"]', 0)->content;
