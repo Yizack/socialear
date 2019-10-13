@@ -55,6 +55,25 @@ require "functions/instagram.php";
     <section class="video_download text-white py-5">
       <div class="container">
         <div class="row align-items-center">
+<?php
+if (isset($_GET["private"])) {
+?>
+            <form action="<?php if ($code !== "en"){e("/".$code);} ?>/instagram" method="post">
+              <div class="form-row">
+                <div class="col-12 col-md-12 mb-3">
+                  <div class="input-group">
+                    <textarea class="form-control" rows="5" id="code" name="code" placeholder="Paste html source code"  required></textarea>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3 mx-auto">
+                  <button class="btn btn-success btn-block" type="submit"><?= $download; ?></button>
+                </div>
+              </div>
+            </form>
+<?php
+}
+else {
+?>
           <div class="col-lg-12 order-lg-1">
             <div class="alert alert-secondary alert-dismissible">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -76,6 +95,9 @@ require "functions/instagram.php";
               </div>
             </div>
           </div>
+<?php
+}
+?>
         </div>
       </div>
     </section>
@@ -86,30 +108,11 @@ require "functions/instagram.php";
             <h2 class="text-center p-5"><?= $more_instagram; ?></h2>
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-<?php
-if (isset($_GET["private"])) {
-?>
-            <form action="<?php if ($code !== "en"){e("/".$code);} ?>/instagram" method="post">
-              <div class="form-row">
-                <div class="col-12 col-md-12 mb-3">
-                  <div class="input-group">
-                    <textarea class="form-control" rows="5" id="code" name="code" placeholder="Paste html source code"></textarea>
-                  </div>
-                </div>
-                <div class="col-12 col-md-3 mx-auto">
-                  <button class="btn btn-success btn-block" type="submit"><?= $download; ?></button>
-                </div>
-              </div>
-            </form>
-<?php
-}
-else {
-?>
             <form action="<?php if ($code !== "en"){e("/".$code);} ?>/instagram" method="get">
               <div class="form-row">
                 <div class="col-12 col-md-9 mb-2 mb-md-0">
                   <div class="input-group">
-                    <input class="form-control" type="text" id="URL" placeholder="https://instagram.com/p/B0qVP-4ncRi" name="URL">
+                    <input class="form-control" type="text" id="URL" placeholder="https://instagram.com/p/B0qVP-4ncRi" name="URL" required>
                   </div>
                 </div>
                 <div class="col-12 col-md-3">
@@ -117,9 +120,6 @@ else {
                 </div>
               </div>
             </form>
-<?php
-}
-?>
           </div>
         </div>
       </div>
