@@ -76,7 +76,7 @@
                         <a onclick="youtube_form()" class="dropdown-item pointer" id="Youtube">Youtube</a>
                       </div>
                     </div>
-                    <input class="form-control form-control" type="text" id="URL" placeholder="https://instagram.com/p/B0qVP-4ncRi/" name="URL">
+                    <input class="form-control form-control" type="text" id="URL" placeholder="https://instagram.com/p/B0qVP-4ncRi/" name="URL" required>
                   </div>
                 </div>
                 <div class="col-12 col-md-3">
