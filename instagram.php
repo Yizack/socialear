@@ -58,6 +58,8 @@ require "functions/instagram.php";
 <?php
 if (isset($_GET["private"])) {
 ?>
+          <div class="col-lg-10 mx-auto">
+            <h2 class="text-center">Download private Instagram videos</h2>
             <form action="<?php if ($code !== "en"){e("/".$code);} ?>/instagram" method="post">
               <div class="form-row">
                 <div class="col-12 col-md-12 mb-3">
@@ -70,6 +72,7 @@ if (isset($_GET["private"])) {
                 </div>
               </div>
             </form>
+          </div>
 <?php
 }
 else {
