@@ -2,6 +2,12 @@
 require "vendor/autoload.php";
 use Abraham\TwitterOAuth\TwitterOAuth;
 
+function connection($consumer_key, $consumer_secret_key, $access_token, $access_token_secret) {
+	$connection = new TwitterOAuth($consumer_key, $consumer_secret_key, $access_token, $access_token_secret);
+	$content = $connection->get("account/verify_credentials");
+	return $connection;
+}
+
 function getTweetInfo($connection,$tweetid) {
     $tweet = $connection->get('statuses/show', [
       'id' => $tweetid,

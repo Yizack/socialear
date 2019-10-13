@@ -1,34 +1,30 @@
 <?php
   require("functions/global.php"); // Global functions
   // Language
-  if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    if (isset($_GET["lang"])) {
-      switch($_GET["lang"]) {
-        case "es": require("strings/spanish.php"); break;
-        case "it": require("strings/italian.php"); break;
-        case "pt": require("strings/portuguese.php"); break;
-        case "fr": require("strings/french.php"); break;
-        case "de": require("strings/german.php"); break;
-        case "nl": require("strings/dutch.php"); break;
-        default: require("strings/english.php"); break;
-      }
-    }
-    else {
-      require("strings/english.php");
-    }
+if (isset($_GET["lang"])) {
+  switch($_GET["lang"]) {
+    case "es": require("strings/spanish.php"); break;
+    case "it": require("strings/italian.php"); break;
+    case "pt": require("strings/portuguese.php"); break;
+    case "fr": require("strings/french.php"); break;
+    case "de": require("strings/german.php"); break;
+    case "nl": require("strings/dutch.php"); break;
+    default: require("strings/english.php"); break;
   }
-  // Twitter Functions
-  require "functions/twitter.php";
-  use Abraham\TwitterOAuth\TwitterOAuth;
+}
+else {
+  require("strings/english.php");
+}
+// Twitter Functions
+require "functions/twitter.php";
 
-  $consumer_key = getenv('CONSUMER_KEY');
-  $consumer_secret_key = getenv('CONSUMER_SECRET_KEY');
+$consumer_key = getenv('CONSUMER_KEY');
+$consumer_secret_key = getenv('CONSUMER_SECRET_KEY');
 
-  $access_token = getenv('ACCESS_TOKEN');
-  $access_token_secret = getenv('ACCESS_TOKEN_SECRET');
+$access_token = getenv('ACCESS_TOKEN');
+$access_token_secret = getenv('ACCESS_TOKEN_SECRET');
 
-  $connection = new TwitterOAuth($consumer_key, $consumer_secret_key, $access_token, $access_token_secret);
-  $content = $connection->get("account/verify_credentials");
+$connection = connection($consumer_key, $consumer_secret_key, $access_token, $access_token_secret);
 ?>
 <!DOCTYPE html>
 <html lang="<?= $code; ?>">
