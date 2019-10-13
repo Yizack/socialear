@@ -1,6 +1,6 @@
 <?php
-  require("functions/global.php"); // Global functions
-  // Language
+require("functions/global.php"); // Global functions
+// Language
 if (isset($_GET["lang"])) {
   switch($_GET["lang"]) {
     case "es": require("strings/spanish.php"); break;
@@ -16,7 +16,7 @@ else {
   require("strings/english.php");
 }
 // Twitter Functions
-require "functions/twitter.php";
+require("functions/twitter.php");
 
 $consumer_key = getenv('CONSUMER_KEY');
 $consumer_secret_key = getenv('CONSUMER_SECRET_KEY');

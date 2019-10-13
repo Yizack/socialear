@@ -1,32 +1,30 @@
 <?php
-  require("functions/global.php"); // Global functions
-  // Language
-  if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    if (isset($_GET["lang"])) {
-      switch($_GET["lang"]) {
-        case "es": require("strings/spanish.php"); break;
-        case "it": require("strings/italian.php"); break;
-        case "pt": require("strings/portuguese.php"); break;
-        case "fr": require("strings/french.php"); break;
-        case "de": require("strings/german.php"); break;
-        case "nl": require("strings/dutch.php"); break;
-        default: require("strings/english.php"); break;
-      }
-    }
-    else {
-      require("strings/english.php");
-    }
+require("functions/global.php"); // Global functions
+// Language
+if (isset($_GET["lang"])) {
+  switch($_GET["lang"]) {
+    case "es": require("strings/spanish.php"); break;
+    case "it": require("strings/italian.php"); break;
+    case "pt": require("strings/portuguese.php"); break;
+    case "fr": require("strings/french.php"); break;
+    case "de": require("strings/german.php"); break;
+    case "nl": require("strings/dutch.php"); break;
+    default: require("strings/english.php"); break;
   }
+}
+else {
+  require("strings/english.php");
+}
 
-  $files = glob("ffmpeg/output/*");
-  $now   = time();
-  foreach ($files as $file) {
-    if (is_file($file)) {
-        if ($now - filemtime($file) >= 60 * 10) { // 10 min
-        unlink($file);
-        }
-      }
+$files = glob("ffmpeg/output/*");
+$now   = time();
+foreach ($files as $file) {
+  if (is_file($file)) {
+    if ($now - filemtime($file) >= 60 * 10) { // 10 min
+      unlink($file);
+    }
   }
+}
 ?>
 <!DOCTYPE html>
 <html lang="<?= $code; ?>">
@@ -65,30 +63,34 @@
           <div class="col-xl-9 mx-auto mt-5">
             <h1 class="mb-5"><?= $merge_title; ?></h1>
           </div>
-            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto text-left">
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto text-left">
 <?php
-                if ($_SERVER["REQUEST_METHOD"] == "GET") {
-                  if (isset($_GET["token"])) {
-                    $token = $_GET["token"];
-                    e("              <div class='alert alert-success'>\n");
-                    e("                <strong>$merge_success</strong> $merge_output: <a href='/ffmpeg/output/video-$token.mp4'>video-$token.mp4</a>\n");
-                    e("              </div>\n");
-                  }
-                  else if(isset($_GET["error"])) {
-                    switch($_GET["error"]) {
-                      case "format":
-                        e("              <div class='alert alert-danger'>\n");
-                        e("                <strong>$merge_error:</strong> $merge_error_format.\n");
-                        e("              </div>\n");
-                        break;
-                      case "upload":
-                        e("              <div class='alert alert-danger'>\n");
-                        e("                <strong>$merge_error:</strong> $merge_error_upload.\n");
-                        e("              </div>\n");
-                        break;
-                    }
-                  }
-                }
+if (isset($_GET["token"])) {
+  $token = $_GET["token"];
+?>
+            <div class='alert alert-success'>
+              <strong><?= $merge_success; ?></strong> <?= $merge_output; ?>: <a href='/ffmpeg/output/video-$token.mp4'>video-<?= $token; ?>.mp4</a>
+            </div>
+<?php
+}
+else if(isset($_GET["error"])) {
+  switch($_GET["error"]) {
+    case "format":
+?>
+            <div class='alert alert-danger'>
+              <strong><?= $merge_error; ?>:</strong> <?= $merge_error_format; ?>.
+            </div>
+<?php
+      break;
+    case "upload":
+?>
+            <div class='alert alert-danger'>
+              <strong><?= $merge_error; ?>:</strong> <?= $merge_error_upload; ?>.
+            </div>
+<?php
+      break;
+  }
+}
 ?>
               <h2><?= $merge_choose; ?></h2>
               <form action="http://merge.yizack.com/" method="POST" enctype="multipart/form-data"> <!-- /merge-script.php -->
@@ -97,7 +99,7 @@
                   <input type="file" class="custom-file-input" id="input_video" name="input_video" accept="video/mp4" required>
                   <label class="custom-file-label" for="input_video" ><?= $merge_choose_video; ?></label>
                 </div>
-                <p><?php e(ucfirst($audio)); ?>:</p>
+                <p><?= ucfirst($audio); ?>:</p>
                 <div class="custom-file mb-3">
                   <input type="file" class="custom-file-input" id="input_audio" name="input_audio" accept="audio/mp3, audio/x-m4a" required>
                   <label class="custom-file-label" for="input_audio"><?= $merge_choose_audio; ?></label>
@@ -114,7 +116,7 @@
     <section>
       <div class="container mt-5 mb-5" id="how-to-use">
         <div class="text-center text-dark">
-          <h3><?php e($merge_how); ?></h3>
+          <h3><?= $merge_how; ?></h3>
         </div>
         <div class="text-left text-dark">
           <h3><small><?= $step; ?> 1</small></h3>

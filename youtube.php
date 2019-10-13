@@ -1,24 +1,22 @@
 <?php
-  require("functions/global.php"); // Global functions
-  // Language
-  if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    if (isset($_GET["lang"])) {
-      switch($_GET["lang"]) {
-        case "es": require("strings/spanish.php"); break;
-        case "it": require("strings/italian.php"); break;
-        case "pt": require("strings/portuguese.php"); break;
-        case "fr": require("strings/french.php"); break;
-        case "de": require("strings/german.php"); break;
-        case "nl": require("strings/dutch.php"); break;
-        default: require("strings/english.php"); break;
-      }
-    }
-    else {
-      require("strings/english.php");
-    }
+require("functions/global.php"); // Global functions
+// Language
+if (isset($_GET["lang"])) {
+  switch($_GET["lang"]) {
+    case "es": require("strings/spanish.php"); break;
+    case "it": require("strings/italian.php"); break;
+    case "pt": require("strings/portuguese.php"); break;
+    case "fr": require("strings/french.php"); break;
+    case "de": require("strings/german.php"); break;
+    case "nl": require("strings/dutch.php"); break;
+    default: require("strings/english.php"); break;
   }
-  // Youtube Functions
-  require "functions/youtube.php";
+}
+else {
+  require("strings/english.php");
+}
+// Youtube Functions
+require("functions/youtube.php");
 ?>
 <!DOCTYPE html>
 <html lang="<?= $code; ?>">

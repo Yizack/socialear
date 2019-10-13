@@ -16,7 +16,7 @@ else {
   require("strings/english.php");
 }
 // Instagram Functions
-require "functions/instagram.php";
+require("functions/instagram.php");
 ?>
 <!DOCTYPE html>
 <html lang="<?= $code; ?>">
