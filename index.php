@@ -71,7 +71,6 @@ else {
                         <a onclick="instagram_form()" class="dropdown-item pointer" id="Instagram">Instagram</a>
                         <a onclick="twitter_form()" class="dropdown-item pointer" id="Twitter">Twitter</a>
                         <a onclick="facebook_form()" class="dropdown-item pointer" id="Facebook">Facebook</a>
-                        <a onclick="youtube_form()" class="dropdown-item pointer" id="Youtube">Youtube</a>
                       </div>
                     </div>
                     <input class="form-control form-control" type="text" id="URL" placeholder="https://instagram.com/p/B0qVP-4ncRi/" name="URL" required>
@@ -109,12 +108,7 @@ else {
         $("#URL").attr("placeholder", "https://twitter.com/EstrellaOnline/status/1138052818017947648");
         $("form").attr("action", "<?php if ($code !== "en"){e("/".$code);} ?>/twitter");
       }
-      function youtube_form(){
-        social_form(document.getElementById("Youtube").text);
-        $("#URL").attr("placeholder", "https://youtube.com/watch?v=afP4aEV66Nw");
-        $("form").attr("action", "<?php if ($code !== "en"){e("/".$code);} ?>/youtube");
-      }
-    function facebook_form(){
+      function facebook_form(){
         social_form(document.getElementById("Facebook").text);
         $("#URL").attr("placeholder", "https://www.facebook.com/321960231808748/videos/1987908671310955");
         $("form").attr("action", "<?php if ($code !== "en"){e("/".$code);} ?>/facebook");
