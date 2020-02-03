@@ -61,13 +61,7 @@ require("functions/youtube.php");
               <i class="fas fa-exclamation-circle fa-fw"></i> <strong>Notification:</strong> Currently copyrighted videos can't be downloaded, we are working to make it possible in the future.
             </div>
           </div>
-          <div class="col-lg-12 order-lg-2">
-            <div class="alert alert-secondary alert-dismissible">
-              <button type="button" class="close" data-dismiss="alert">&times;</button>
-              <i class="fas fa-info-circle fa-fw"></i> Socialear can only extract the video and audio sources separately from youtube, to merge them, download your files and use the <a href="/merge" target="_blank">"<strong>Merge</strong>"</a> tool.
-            </div>
-          </div>
-          <div class="col-lg-6 order-lg-3">
+          <div class="col-lg-6 order-lg-2">
             <div class="text-center">
               <h2><?= $video_youtube; ?></h2>
               <div id="video_image">
