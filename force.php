@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     header("Cache-Control: public");    
     header("Content-Description: File Transfer");
     header("Content-Type: audio/mp3");
-    header("Content-Length: ".filesize($location));
     header("Content-Disposition: attachment; filename=$title");
     // Force the download           
     header("Content-Transfer-Encoding: binary");            
