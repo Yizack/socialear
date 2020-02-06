@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
       return 'done';
   }
   if(download($location, $url) === 'done'){
+    $token = bin2hex(random_bytes(8));
     $upload_video = $s3->upload($bucket, "file-$token", fopen($location, 'rb'), 'public-read');
     header("Location: http://socialear.yizack.com/force?title=$title&token=$token");
     die();
