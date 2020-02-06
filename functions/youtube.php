@@ -35,13 +35,9 @@
     function getVideoInfo($url) {
         $id = getID($url);
         $data = file_get_contents("http://youtube.com/get_video_info?video_id=$id");
-        $output = array();
         parse_str($data , $details);
-        foreach (explode(',' , $details['adaptive_fmts']) AS $quality) {
-            parse_str($quality , $video);
-            $output[] = $video;
-        }
-        return $output;
+        $player_response = json_decode($details['player_response'], true);
+        return $player_response['streamingData']['adaptiveFormats'];
     }
    
     // Return thumbnail
