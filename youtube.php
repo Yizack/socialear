@@ -92,55 +92,55 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
           $video = $video_array[$x]['url'];
           $size = $video_array[$x]['qualityLabel'];
           $tooltip = $video_only;
-          writeOption($size, $video, $download, $tooltip, "$title.mp4");
+          writeOption($size, $video, $download, $tooltip);
           break;
         case "133": 
           $video = $video_array[$x]['url'];
           $size = $video_array[$x]['qualityLabel'];
           $tooltip = $video_only;
-          writeOption($size, $video, $download, $tooltip, "$title.mp4");
+          writeOption($size, $video, $download, $tooltip);
           break;
         case "134":
           $video = $video_array[$x]['url'];
           $size = $video_array[$x]['qualityLabel'];
           $tooltip = $video_only;
-          writeOption($size, $video, $download, $tooltip, "$title.mp4");
+          writeOption($size, $video, $download, $tooltip);
           break;
         case "135":
           $video = $video_array[$x]['url'];
           $size = $video_array[$x]['qualityLabel'];
           $tooltip = $video_only;
-          writeOption($size, $video, $download, $tooltip, "$title.mp4");
+          writeOption($size, $video, $download, $tooltip);
           break;
         case "298":
           $video = $video_array[$x]['url'];
           $size = $video_array[$x]['qualityLabel'];
           $tooltip = $video_only;
-          writeOption($size, $video, $download, $tooltip, "$title.mp4");
+          writeOption($size, $video, $download, $tooltip);
           break;
         case "136":
           $video = $video_array[$x]['url'];
           $size = $video_array[$x]['qualityLabel'];
           $tooltip = $video_only;
-          writeOption($size, $video, $download, $tooltip, "$title.mp4");
+          writeOption($size, $video, $download, $tooltip);
           break;
         case "299":
           $video = $video_array[$x]['url'];
           $size = $video_array[$x]['qualityLabel'];
           $tooltip = $video_only;
-          writeOption($size, $video, $download, $tooltip, "$title.mp4");
+          writeOption($size, $video, $download, $tooltip);
           break;
         case "137":
           $video = $video_array[$x]['url'];
           $size = $video_array[$x]['qualityLabel'];
           $tooltip = $video_only;
-          writeOption($size, $video, $download, $tooltip, "$title.mp4");
+          writeOption($size, $video, $download, $tooltip);
           break;
         case "140":
           $audio = $video_array[$x]['url'];
           $size = 'Audio';
           $tooltip = $audio_only;
-          writeOption($size, $audio, $download, $tooltip, "$title.mp3");
+          writeOption($size, $audio, $download, $tooltip);
           break;
       }
     }
@@ -193,18 +193,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
   </body>
 </html>
 <?php
-function writeOption($size, $video, $download, $tooltip, $title) {
+function writeOption($size, $video, $download, $tooltip) {
 ?>
                 <div class="input-group m-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text text-monospace like-pre"><script>document.write(("<?= $size ?>").padStart(7))</script></span>
                   </div>
                   <div class="input-group-append">
-                    <form action="/upload-aws" method="post">
-                      <input type="hidden" name="url" value="<?= urldecode($video) ?>">
-                      <input type="hidden" name="title" value="<?= urlencode($title) ?>">
-                      <a style="cursor: pointer;" class="btn btn-primary" onclick="this.parentNode.submit(); return false;" role="button" data-toggle="tooltip" data-placement="right" title="<?= $tooltip ?>"><i class="fas fa-download fa-fw"></i><?= $download ?></a>
-                    </form>
+                    <a class="btn btn-primary" href="<?= $video ?>" role="button" data-toggle="tooltip" data-placement="right" title="<?= $tooltip ?>"><i class="fas fa-download fa-fw"></i><?= $download ?></a>
                   </div>
                 </div>
 <?php
