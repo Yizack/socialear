@@ -2,7 +2,7 @@
 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     $bucket = getenv('AWS_BUCKET');
 	$token = $_GET["token"];
-	$aws = "http://s3.us-east-2.amazonaws.com";
+	$aws = "https://s3.us-east-2.amazonaws.com";
     $location = "$aws/$bucket/file-$token";
     $title = $_GET['title'];
     header("Pragma: public");
