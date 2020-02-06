@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 	$token = $_GET["token"];
 	$aws = "https://s3.us-east-2.amazonaws.com";
     $location = "$aws/$bucket/file-$token";
-    $title = urldecode($_GET['title']);
+    $title = $_GET['title'];
     header("Pragma: public");
     header('Expires: 0');
     header('Cache-Control: no-store, no-cache, must-revalidate');
