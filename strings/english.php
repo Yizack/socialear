@@ -1,9 +1,9 @@
 <?php
     require("functions/strings.php"); // Global functions
-
+    
+    $code = "en";
     $language = "Language";
     $flag = '<i class="em-svg em-us"></i>';
-    $code = "en";
 
     // Index
     $sitename = "Socialear";
