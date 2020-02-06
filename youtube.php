@@ -195,18 +195,18 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 <?php
 function writeOption($size, $video, $download, $tooltip, $title) {
 ?>
-                <form action="/upload-aws" method="post">
-                  <div class="input-group m-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text text-monospace like-pre"><script>document.write(("<?= $size ?>").padStart(7))</script></span>
-                    </div>
-                    <div class="input-group-append">
-                      <input type="hidden" name="url" value="<?= urldecode($video) ?>">
-                      <input type="hidden" name="title" value="<?= $title ?>">
-                      <a class="btn btn-primary" onclick="this.parentNode.submit(); return false;" role="button" data-toggle="tooltip" data-placement="right" title="<?= $tooltip ?>"><i class="fas fa-download fa-fw"></i><?= $download ?></a>
-                    </div>
+                <div class="input-group m-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text text-monospace like-pre"><script>document.write(("<?= $size ?>").padStart(7))</script></span>
                   </div>
-                </form>
+                  <div class="input-group-append">
+                    <form action="/upload-aws" method="post">
+                      <input type="hidden" name="url" value="<?= urldecode($video) ?>">
+                      <input type="hidden" name="title" value="<?= urlencode($title) ?>">
+                      <a style="cursor: pointer;" class="btn btn-primary" onclick="this.parentNode.submit(); return false;" role="button" data-toggle="tooltip" data-placement="right" title="<?= $tooltip ?>"><i class="fas fa-download fa-fw"></i><?= $download ?></a>
+                    </form>
+                  </div>
+                </div>
 <?php
 }
 ?>
