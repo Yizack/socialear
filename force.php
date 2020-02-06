@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     header("Cache-Control: public");    
     header("Content-Description: File Transfer");
     header("Content-Type: application/octet-stream");
-    header("Content-Disposition: attachment; filename=\"$title\"");
+    header('Content-Disposition: attachment; filename='."$title");
     // Force the download           
     header("Content-Transfer-Encoding: binary");            
     readfile($location);
