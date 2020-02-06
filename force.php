@@ -3,7 +3,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     $bucket = getenv('AWS_BUCKET');
 	$token = $_GET["token"];
 	$aws = "http://s3.us-east-2.amazonaws.com";
-    $location = "$aws/$bucket/file-$token.socialear";
+    $location = "$aws/$bucket/file-$token";
     $title = $_GET['title'];
     header("Pragma: public");
     header('Expires: 0');
@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     header("Cache-Control: public");    
     header("Content-Description: File Transfer");
     header("Content-Type: application/octet-stream");
-    header("Content-Length: ".filesize(trim($location)));
+    header("Content-Length: ".filesize($location));
     header("Content-Disposition: attachment; filename=$title");
     // Force the download           
     header("Content-Transfer-Encoding: binary");            
