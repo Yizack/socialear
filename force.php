@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     $bucket = getenv('AWS_BUCKET');
-	$token = $_GET["token"];
+	$token = urldecode($_GET["token"]);
 	$aws = "https://s3.us-east-2.amazonaws.com";
     $location = "$aws/$bucket/file-$token";
     $title = $_GET['title'];
