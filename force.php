@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     header('Cache-Control: pre-check=0, post-check=0, max-age=0');
     header("Cache-Control: public");    
     header("Content-Description: File Transfer");
-    header("Content-Type: audio/mp3");
+    header("Content-Type: application/octet-stream");
     header("Content-Disposition: attachment; filename=$title");
     // Force the download           
     header("Content-Transfer-Encoding: binary");            
