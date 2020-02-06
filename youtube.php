@@ -197,15 +197,13 @@ function writeOption($size, $video, $download, $tooltip, $title) {
 ?>
                 <div class="input-group m-3">
                   <div class="input-group-prepend">
-                    <span class="input-group-text text-monospace like-pre">
-                      <script>document.write(("<?= $size ?>").padStart(7))</script>
-                    </span>
+                    <span class="input-group-text text-monospace like-pre"><script>document.write(("<?= $size ?>").padStart(7))</script></span>
                   </div>
                   <div class="input-group-append">
                     <form action="/upload-aws" method="post">
                       <input type="hidden" name="url" value="<?= urldecode($video) ?>">
                       <input type="hidden" name="title" value="<?= $title ?>">
-                      <a class="btn btn-primary" type="submit" role="button" data-toggle="tooltip" data-placement="right" title="<?= $tooltip ?>"><i class="fas fa-download fa-fw"></i><?= $download ?></a>
+                      <a class="btn btn-primary" onclick="this.parentNode.submit(); return false;" role="button" data-toggle="tooltip" data-placement="right" title="<?= $tooltip ?>"><i class="fas fa-download fa-fw"></i><?= $download ?></a>
                     </form>
                   </div>
                 </div>
