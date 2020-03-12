@@ -10,6 +10,6 @@
     ],
     "require": {
         "abraham/twitteroauth": "^1.0",
-        "paquettg/php-html-parser": "^2.1"
+        "paquettg/php-html-parser": "^2.2.1"
     }
 }
